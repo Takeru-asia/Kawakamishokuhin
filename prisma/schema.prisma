@@ -1,0 +1,395 @@
+// 川上食品 HACCP管理システム - Prisma Schema
+// PostgreSQL + 17エンティティ
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================================
+// Enum 定義（5種）
+// ============================================================
+
+enum Role {
+  ADMIN
+  MANAGER
+  WORKER
+}
+
+enum FacilityType {
+  REFRIGERATOR
+  FREEZER
+  HEATER
+  OTHER
+}
+
+enum AlertStatus {
+  OPEN
+  ACKNOWLEDGED
+  RESOLVED
+}
+
+enum HygieneResult {
+  PASS
+  FAIL
+  NA
+}
+
+// ============================================================
+// マスタ系（7テーブル）
+// ============================================================
+
+/// ユーザー
+model User {
+  id           String   @id @default(uuid()) @db.Uuid
+  name         String   @db.VarChar(100)
+  email        String   @unique @db.VarChar(255)
+  passwordHash String   @map("password_hash") @db.VarChar(255)
+  role         Role     @default(WORKER)
+  isActive     Boolean  @default(true) @map("is_active")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  productionRecords  ProductionRecord[]
+  temperatureRecords TemperatureRecord[]
+  hygieneRecords     HygieneRecord[]
+  resolvedAlerts     TemperatureAlert[]  @relation("AlertResolvedBy")
+  productionTargets  ProductionTarget[]
+  lossRecords        LossRecord[]
+
+  @@index([role])
+  @@index([isActive])
+  @@map("users")
+}
+
+/// 製品
+model Product {
+  id        String   @id @default(uuid()) @db.Uuid
+  code      String   @unique @db.VarChar(50)
+  name      String   @db.VarChar(200)
+  unit      String   @db.VarChar(20)
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  productMaterials      ProductMaterial[]
+  productionRecordItems ProductionRecordItem[]
+  productLots           ProductLot[]
+  productionTargets     ProductionTarget[]
+  lossRecords           LossRecord[]
+
+  @@index([isActive])
+  @@map("products")
+}
+
+/// 原材料
+model Material {
+  id        String   @id @default(uuid()) @db.Uuid
+  code      String   @unique @db.VarChar(50)
+  name      String   @db.VarChar(200)
+  unit      String   @db.VarChar(20)
+  supplier  String?  @db.VarChar(200)
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  productMaterials ProductMaterial[]
+  materialLots     MaterialLot[]
+
+  @@index([isActive])
+  @@map("materials")
+}
+
+/// 設備
+model Facility {
+  id             String       @id @default(uuid()) @db.Uuid
+  code           String       @unique @db.VarChar(50)
+  name           String       @db.VarChar(200)
+  type           FacilityType
+  tempLowerLimit Decimal?     @map("temp_lower_limit") @db.Decimal(5, 2)
+  tempUpperLimit Decimal?     @map("temp_upper_limit") @db.Decimal(5, 2)
+  location       String?      @db.VarChar(200)
+  isActive       Boolean      @default(true) @map("is_active")
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt @map("updated_at")
+
+  // Relations
+  temperatureRecords TemperatureRecord[]
+  temperatureAlerts  TemperatureAlert[]
+  hygieneRecords     HygieneRecord[]
+
+  @@index([type])
+  @@index([isActive])
+  @@map("facilities")
+}
+
+/// 製品配合（BOM）
+model ProductMaterial {
+  id         String   @id @default(uuid()) @db.Uuid
+  productId  String   @map("product_id") @db.Uuid
+  materialId String   @map("material_id") @db.Uuid
+  quantity   Decimal  @db.Decimal(10, 2)
+  unit       String   @db.VarChar(20)
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  product  Product  @relation(fields: [productId], references: [id])
+  material Material @relation(fields: [materialId], references: [id])
+
+  @@unique([productId, materialId])
+  @@map("product_materials")
+}
+
+/// 衛生管理カテゴリ
+model HygieneCategory {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @db.VarChar(100)
+  description String?  @db.Text
+  sortOrder   Int      @map("sort_order")
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  hygieneRecords HygieneRecord[]
+
+  @@index([sortOrder])
+  @@map("hygiene_categories")
+}
+
+/// ロス原因カテゴリ
+model LossCategory {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @db.VarChar(100)
+  description String?  @db.Text
+  sortOrder   Int      @map("sort_order")
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  lossRecords LossRecord[]
+
+  @@index([sortOrder])
+  @@map("loss_categories")
+}
+
+// ============================================================
+// トランザクション系（10テーブル）
+// ============================================================
+
+/// 製造実績
+model ProductionRecord {
+  id             String   @id @default(uuid()) @db.Uuid
+  productionDate DateTime @map("production_date") @db.Date
+  recordedById   String   @map("recorded_by") @db.Uuid
+  notes          String?  @db.Text
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  recordedBy User                   @relation(fields: [recordedById], references: [id])
+  items      ProductionRecordItem[]
+
+  @@index([productionDate])
+  @@map("production_records")
+}
+
+/// 製造実績明細
+model ProductionRecordItem {
+  id                 String   @id @default(uuid()) @db.Uuid
+  productionRecordId String   @map("production_record_id") @db.Uuid
+  productId          String   @map("product_id") @db.Uuid
+  quantity           Decimal  @db.Decimal(10, 2)
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  productionRecord ProductionRecord @relation(fields: [productionRecordId], references: [id])
+  product          Product          @relation(fields: [productId], references: [id])
+  productLots      ProductLot[]
+
+  @@index([productionRecordId, productId])
+  @@map("production_record_items")
+}
+
+/// 原材料ロット
+model MaterialLot {
+  id           String    @id @default(uuid()) @db.Uuid
+  materialId   String    @map("material_id") @db.Uuid
+  lotNumber    String    @unique @map("lot_number") @db.VarChar(100)
+  receivedDate DateTime  @map("received_date") @db.Date
+  expiryDate   DateTime? @map("expiry_date") @db.Date
+  quantity     Decimal   @db.Decimal(10, 2)
+  supplierLot  String?   @map("supplier_lot") @db.VarChar(100)
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  material Material  @relation(fields: [materialId], references: [id])
+  lotLinks LotLink[]
+
+  @@index([materialId])
+  @@index([receivedDate])
+  @@map("material_lots")
+}
+
+/// 製品ロット
+model ProductLot {
+  id                     String    @id @default(uuid()) @db.Uuid
+  productionRecordItemId String    @map("production_record_item_id") @db.Uuid
+  productId              String    @map("product_id") @db.Uuid
+  lotNumber              String    @unique @map("lot_number") @db.VarChar(100)
+  productionDate         DateTime  @map("production_date") @db.Date
+  quantity               Decimal   @db.Decimal(10, 2)
+  expiryDate             DateTime? @map("expiry_date") @db.Date
+  createdAt              DateTime  @default(now()) @map("created_at")
+  updatedAt              DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  productionRecordItem ProductionRecordItem @relation(fields: [productionRecordItemId], references: [id])
+  product              Product              @relation(fields: [productId], references: [id])
+  lotLinks             LotLink[]
+
+  @@index([productId])
+  @@index([productionDate])
+  @@map("product_lots")
+}
+
+/// ロットトレーサビリティ
+model LotLink {
+  id            String   @id @default(uuid()) @db.Uuid
+  materialLotId String   @map("material_lot_id") @db.Uuid
+  productLotId  String   @map("product_lot_id") @db.Uuid
+  quantityUsed  Decimal? @map("quantity_used") @db.Decimal(10, 2)
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  // Relations
+  materialLot MaterialLot @relation(fields: [materialLotId], references: [id])
+  productLot  ProductLot  @relation(fields: [productLotId], references: [id])
+
+  @@index([materialLotId])
+  @@index([productLotId])
+  @@map("lot_links")
+}
+
+/// 温度記録
+model TemperatureRecord {
+  id           String   @id @default(uuid()) @db.Uuid
+  facilityId   String   @map("facility_id") @db.Uuid
+  recordedAt   DateTime @map("recorded_at")
+  temperature  Decimal  @db.Decimal(5, 2)
+  isNormal     Boolean  @map("is_normal")
+  recordedById String   @map("recorded_by") @db.Uuid
+  notes        String?  @db.Text
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  facility         Facility          @relation(fields: [facilityId], references: [id])
+  recordedBy       User              @relation(fields: [recordedById], references: [id])
+  temperatureAlert TemperatureAlert?
+
+  @@index([facilityId])
+  @@index([recordedAt])
+  @@index([isNormal])
+  @@map("temperature_records")
+}
+
+/// 温度異常アラート
+model TemperatureAlert {
+  id                  String      @id @default(uuid()) @db.Uuid
+  temperatureRecordId String      @unique @map("temperature_record_id") @db.Uuid
+  facilityId          String      @map("facility_id") @db.Uuid
+  alertTemperature    Decimal     @map("alert_temperature") @db.Decimal(5, 2)
+  threshold           Decimal     @db.Decimal(5, 2)
+  status              AlertStatus @default(OPEN)
+  resolvedById        String?     @map("resolved_by") @db.Uuid
+  resolvedAt          DateTime?   @map("resolved_at")
+  correctiveAction    String?     @map("corrective_action") @db.Text
+  createdAt           DateTime    @default(now()) @map("created_at")
+  updatedAt           DateTime    @updatedAt @map("updated_at")
+
+  // Relations
+  temperatureRecord TemperatureRecord @relation(fields: [temperatureRecordId], references: [id])
+  facility          Facility          @relation(fields: [facilityId], references: [id])
+  resolvedBy        User?             @relation("AlertResolvedBy", fields: [resolvedById], references: [id])
+
+  @@index([status])
+  @@index([facilityId])
+  @@map("temperature_alerts")
+}
+
+/// 衛生管理記録
+model HygieneRecord {
+  id           String        @id @default(uuid()) @db.Uuid
+  categoryId   String        @map("category_id") @db.Uuid
+  facilityId   String?       @map("facility_id") @db.Uuid
+  recordDate   DateTime      @map("record_date") @db.Date
+  details      String        @db.Text
+  result       HygieneResult
+  recordedById String        @map("recorded_by") @db.Uuid
+  notes        String?       @db.Text
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+
+  // Relations
+  category   HygieneCategory @relation(fields: [categoryId], references: [id])
+  facility   Facility?       @relation(fields: [facilityId], references: [id])
+  recordedBy User            @relation(fields: [recordedById], references: [id])
+
+  @@index([categoryId])
+  @@index([recordDate])
+  @@map("hygiene_records")
+}
+
+/// 製造目標
+model ProductionTarget {
+  id             String   @id @default(uuid()) @db.Uuid
+  productId      String   @map("product_id") @db.Uuid
+  targetYear     Int      @map("target_year")
+  targetMonth    Int      @map("target_month")
+  targetQuantity Decimal  @map("target_quantity") @db.Decimal(10, 2)
+  dailyTarget    Decimal? @map("daily_target") @db.Decimal(10, 2)
+  setById        String   @map("set_by") @db.Uuid
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  product Product @relation(fields: [productId], references: [id])
+  setBy   User    @relation(fields: [setById], references: [id])
+
+  @@unique([productId, targetYear, targetMonth])
+  @@map("production_targets")
+}
+
+/// ロス記録
+model LossRecord {
+  id           String   @id @default(uuid()) @db.Uuid
+  productId    String   @map("product_id") @db.Uuid
+  categoryId   String   @map("category_id") @db.Uuid
+  recordDate   DateTime @map("record_date") @db.Date
+  quantity     Decimal  @db.Decimal(10, 2)
+  lossRate     Decimal? @map("loss_rate") @db.Decimal(5, 2)
+  recordedById String   @map("recorded_by") @db.Uuid
+  notes        String?  @db.Text
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  product    Product      @relation(fields: [productId], references: [id])
+  category   LossCategory @relation(fields: [categoryId], references: [id])
+  recordedBy User         @relation(fields: [recordedById], references: [id])
+
+  @@index([productId])
+  @@index([recordDate])
+  @@index([categoryId])
+  @@map("loss_records")
+}
