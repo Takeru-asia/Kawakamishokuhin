@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="BF-TEMP-01 温度記録・異常検知" id="bf-temp-01">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Start -->
+        <mxCell id="temp1-1" value="温度計測開始" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="40" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Select equipment -->
+        <mxCell id="temp1-2" value="設備を選択&#xa;(冷蔵庫A/B、冷凍庫、加熱設備)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="120" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e1" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-1" target="temp1-2" parent="1"/>
+
+        <!-- Measure temperature -->
+        <mxCell id="temp1-3" value="温度を計測" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="200" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e2" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-2" target="temp1-3" parent="1"/>
+
+        <!-- Input temperature -->
+        <mxCell id="temp1-4" value="計測温度を入力" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="280" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e3" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-3" target="temp1-4" parent="1"/>
+
+        <!-- Input notes -->
+        <mxCell id="temp1-5" value="備考を入力(任意)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="360" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e4" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-4" target="temp1-5" parent="1"/>
+
+        <!-- Submit button -->
+        <mxCell id="temp1-6" value="登録ボタン押下" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="440" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e5" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-5" target="temp1-6" parent="1"/>
+
+        <!-- Validation decision -->
+        <mxCell id="temp1-7" value="入力値&#xa;バリデーション" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="520" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e6" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-6" target="temp1-7" parent="1"/>
+
+        <!-- Validation error -->
+        <mxCell id="temp1-8" value="エラー表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="530" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e7a" value="不正" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-7" target="temp1-8" parent="1"/>
+
+        <!-- Loop back to input -->
+        <mxCell id="temp1-e7b" value="入力に戻る" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="temp1-8" target="temp1-4" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="530"/>
+              <mxPoint x="760" y="305"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Get threshold -->
+        <mxCell id="temp1-9" value="設備の温度基準値を取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="630" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e8" value="正常" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-7" target="temp1-9" parent="1"/>
+
+        <!-- Equipment type decision -->
+        <mxCell id="temp1-10" value="設備種別は？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="720" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e9" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-9" target="temp1-10" parent="1"/>
+
+        <!-- Cold equipment check -->
+        <mxCell id="temp1-11a" value="計測温度&#xa;&gt; 上限値？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="830" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e10a" value="冷蔵/冷凍設備" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-10" target="temp1-11a" parent="1"/>
+
+        <!-- Heat equipment check -->
+        <mxCell id="temp1-11b" value="計測温度&#xa;&lt; 下限値？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="830" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e10b" value="加熱設備" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-10" target="temp1-11b" parent="1"/>
+
+        <!-- Other: normal -->
+        <mxCell id="temp1-11c" value="正常判定" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="845" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e10c" value="その他" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-10" target="temp1-11c" parent="1"/>
+
+        <!-- Cold: abnormal -->
+        <mxCell id="temp1-12a1" value="異常" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="940" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e11a1" value="上限超過" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-11a" target="temp1-12a1" parent="1"/>
+
+        <!-- Cold: normal -->
+        <mxCell id="temp1-12a2" value="正常" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="190" y="940" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e11a2" value="上限以内" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-11a" target="temp1-12a2" parent="1"/>
+
+        <!-- Heat: abnormal -->
+        <mxCell id="temp1-12b1" value="異常" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="940" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e11b1" value="下限未満" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-11b" target="temp1-12b1" parent="1"/>
+
+        <!-- Heat: normal -->
+        <mxCell id="temp1-12b2" value="正常" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="510" y="940" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e11b2" value="下限以上" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-11b" target="temp1-12b2" parent="1"/>
+
+        <!-- Normal path: save record -->
+        <mxCell id="temp1-13" value="温度記録保存&#xa;(is_normal=true)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1020" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e12a2" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-12a2" target="temp1-13" parent="1"/>
+        <mxCell id="temp1-e12b2" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-12b2" target="temp1-13" parent="1"/>
+        <mxCell id="temp1-e12c" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-11c" target="temp1-13" parent="1"/>
+
+        <!-- Abnormal path: save record -->
+        <mxCell id="temp1-14" value="温度記録保存&#xa;(is_normal=false)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1020" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e12a1" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-12a1" target="temp1-14" parent="1"/>
+        <mxCell id="temp1-e12b1" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-12b1" target="temp1-14" parent="1"/>
+
+        <!-- Alert auto create -->
+        <mxCell id="temp1-15" value="アラート自動作成&#xa;(status=OPEN)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1100" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e14" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-14" target="temp1-15" parent="1"/>
+
+        <!-- Dashboard banner -->
+        <mxCell id="temp1-16" value="ダッシュボードに&#xa;バナー表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1180" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e15" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-15" target="temp1-16" parent="1"/>
+
+        <!-- Registration complete -->
+        <mxCell id="temp1-17" value="登録完了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1180" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e13" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-13" target="temp1-17" parent="1"/>
+        <mxCell id="temp1-e16" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-16" target="temp1-17" parent="1"/>
+
+        <!-- Check list decision -->
+        <mxCell id="temp1-18" value="一覧を確認？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1270" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e17" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-17" target="temp1-18" parent="1"/>
+
+        <!-- List display -->
+        <mxCell id="temp1-19" value="一覧表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1280" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e18a" value="はい" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-18" target="temp1-19" parent="1"/>
+
+        <!-- End -->
+        <mxCell id="temp1-20" value="終了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1380" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp1-e18b" value="いいえ" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-18" target="temp1-20" parent="1"/>
+        <mxCell id="temp1-e19" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp1-19" target="temp1-20" parent="1"/>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

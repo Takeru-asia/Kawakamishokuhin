@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="BF-00-02 業務領域間の関連" id="bf0002-domain-relations">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Subgraph: マスタ管理 (左) -->
+        <mxCell id="d2-sg01" value="マスタ管理" style="fontColor=#333333;swimlane;startSize=30;fillColor=#E6E6E6;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="200" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n01" value="製品マスタ" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg01">
+          <mxGeometry x="15" y="45" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n02" value="原材料マスタ" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg01">
+          <mxGeometry x="15" y="105" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n03" value="設備マスタ" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg01">
+          <mxGeometry x="15" y="165" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n04" value="ユーザーマスタ" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg01">
+          <mxGeometry x="15" y="225" width="170" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- Subgraph: P1 HACCP管理 (中央) -->
+        <mxCell id="d2-sg02" value="P1: HACCP管理" style="fontColor=#333333;swimlane;startSize=30;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="40" width="200" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n05" value="温度管理" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg02">
+          <mxGeometry x="15" y="45" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n06" value="製造管理" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg02">
+          <mxGeometry x="15" y="105" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n07" value="ロット管理" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg02">
+          <mxGeometry x="15" y="165" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n08" value="衛生管理" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg02">
+          <mxGeometry x="15" y="225" width="170" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- Subgraph: P2 原価管理 (右) -->
+        <mxCell id="d2-sg03" value="P2: 原価管理" style="fontColor=#333333;swimlane;startSize=30;fillColor=#D5E8D4;strokeColor=#82B366;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="40" width="200" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n09" value="製造目標" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg03">
+          <mxGeometry x="15" y="45" width="170" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n10" value="ロス管理" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="d2-sg03">
+          <mxGeometry x="15" y="105" width="170" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- Output nodes (下段) -->
+        <mxCell id="d2-n11" value="アラート管理&lt;br&gt;（異常検知）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="450" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2-n12" value="追跡・レポート&lt;br&gt;（トレーサビリティ）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="450" width="200" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- === Edges: マスタ → HACCP === -->
+        <!-- 設備 → 温度管理 -->
+        <mxCell id="d2-e01" value="設備情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" edge="1" source="d2-n03" target="d2-n05" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 設備 → 衛生管理 -->
+        <mxCell id="d2-e02" value="設備情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" edge="1" source="d2-n03" target="d2-n08" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="228"/>
+              <mxPoint x="280" y="308"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 製品 → 製造管理 -->
+        <mxCell id="d2-e03" value="製品情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" edge="1" source="d2-n01" target="d2-n06" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="108"/>
+              <mxPoint x="270" y="188"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 製品 → ロット管理 -->
+        <mxCell id="d2-e04" value="製品情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" edge="1" source="d2-n01" target="d2-n07" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="108"/>
+              <mxPoint x="260" y="248"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 原材料 → ロット管理 -->
+        <mxCell id="d2-e05" value="原材料情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" edge="1" source="d2-n02" target="d2-n07" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="168"/>
+              <mxPoint x="290" y="248"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- === Edges: マスタ → 原価管理 === -->
+        <!-- 製品 → 製造目標 -->
+        <mxCell id="d2-e06" value="製品情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="d2-n01" target="d2-n09" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="108"/>
+              <mxPoint x="560" y="108"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 製品 → ロス管理 -->
+        <mxCell id="d2-e07" value="製品情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" edge="1" source="d2-n01" target="d2-n10" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="108"/>
+              <mxPoint x="570" y="168"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- === Edges: HACCP内部 === -->
+        <!-- 製造 → ロット (製品ロット生成) -->
+        <mxCell id="d2-e08" value="製品ロット生成" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="d2-n06" target="d2-n07" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- === Edges: HACCP → 原価管理 === -->
+        <!-- 製造 → 製造目標 (実績データ) -->
+        <mxCell id="d2-e09" value="実績データ" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" edge="1" source="d2-n06" target="d2-n09" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="188"/>
+              <mxPoint x="550" y="108"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 製造 → ロス管理 (製造数量) -->
+        <mxCell id="d2-e10" value="製造数量" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" edge="1" source="d2-n06" target="d2-n10" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- === Edges: 出力 === -->
+        <!-- 温度管理 → アラート管理 -->
+        <mxCell id="d2-e11" value="異常検知" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#B85450;fontStyle=1;" edge="1" source="d2-n05" target="d2-n11" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="420"/>
+              <mxPoint x="420" y="420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ロット管理 → 追跡レポート -->
+        <mxCell id="d2-e12" value="トレーサビリティ" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#9673A6;fontStyle=1;" edge="1" source="d2-n07" target="d2-n12" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="248"/>
+              <mxPoint x="540" y="420"/>
+              <mxPoint x="710" y="420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

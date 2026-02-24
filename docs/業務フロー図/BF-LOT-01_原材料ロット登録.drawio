@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="BF-LOT-01 原材料ロット登録" id="bf-lot-01">
+    <mxGraphModel dx="1422" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Row 1: 原材料入荷 -->
+        <mxCell id="l1-n01" value="&lt;b&gt;原材料入荷&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="30" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 2: 原材料ロット登録画面を開く -->
+        <mxCell id="l1-n02" value="原材料ロット登録画面を開く" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="110" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 3: 原材料を選択 -->
+        <mxCell id="l1-n03" value="原材料を選択" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="190" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 4: 入荷日を入力 -->
+        <mxCell id="l1-n04" value="入荷日を入力" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="270" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 5: 有効期限を入力(任意) -->
+        <mxCell id="l1-n05" value="有効期限を入力（任意）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="350" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 6: 入荷数量を入力 -->
+        <mxCell id="l1-n06" value="入荷数量を入力" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="430" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 7: 仕入先ロット番号を入力(任意) -->
+        <mxCell id="l1-n07" value="仕入先ロット番号を入力&lt;br&gt;（任意）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="510" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 8: 登録ボタン押下 -->
+        <mxCell id="l1-n08" value="登録ボタン押下" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="590" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 9: 分岐 入力値バリデーション -->
+        <mxCell id="l1-n09" value="入力値&lt;br&gt;バリデーション" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="670" width="140" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Left: エラー表示 -->
+        <mxCell id="l1-n10" value="エラー表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="680" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row 10: ロット番号自動採番 (heading before subgraph) -->
+        <mxCell id="l1-n11" value="ロット番号自動採番" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="780" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Subgraph: 原材料ロット採番 -->
+        <mxCell id="l1-sg01" value="原材料ロット採番" style="fontColor=#333333;swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="860" width="260" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-n12" value="入荷日取得&lt;br&gt;(YYYYMMDD)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="l1-sg01">
+          <mxGeometry x="40" y="40" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-n13" value="最終連番取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="l1-sg01">
+          <mxGeometry x="40" y="100" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-n14" value="MLT-YYYYMMDD-NNN&lt;br&gt;形式で生成" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="l1-sg01">
+          <mxGeometry x="40" y="160" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Row after subgraph: 原材料ロットを保存 -->
+        <mxCell id="l1-n15" value="原材料ロットを保存&lt;br&gt;(material_lots)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1120" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- 登録完了 -->
+        <mxCell id="l1-n16" value="登録完了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1200" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ロット検索画面へ遷移 -->
+        <mxCell id="l1-n17" value="ロット検索画面へ遷移" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1280" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- 終了 -->
+        <mxCell id="l1-n18" value="&lt;b&gt;終了&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1360" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges inside subgraph -->
+        <mxCell id="l1-es01" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n12" target="l1-n13" parent="l1-sg01">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-es02" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n13" target="l1-n14" parent="l1-sg01">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Main flow edges -->
+        <mxCell id="l1-e01" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n01" target="l1-n02" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-e02" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n02" target="l1-n03" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-e03" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n03" target="l1-n04" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-e04" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n04" target="l1-n05" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-e05" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n05" target="l1-n06" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-e06" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n06" target="l1-n07" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-e07" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n07" target="l1-n08" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1-e08" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n08" target="l1-n09" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- バリデーション: 不正 -> エラー -->
+        <mxCell id="l1-e09" value="不正" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;fontStyle=1;fontColor=#b85450;" edge="1" source="l1-n09" target="l1-n10" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- エラー -> 原材料選択に戻る -->
+        <mxCell id="l1-e10" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n10" target="l1-n03" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="60" y="705"/>
+              <mxPoint x="60" y="215"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- バリデーション: 正常 -> ロット番号自動採番 -->
+        <mxCell id="l1-e11" value="正常" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n09" target="l1-n11" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 自動採番 -> サブグラフ -->
+        <mxCell id="l1-e12" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n11" target="l1-sg01" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- サブグラフ -> 原材料ロット保存 -->
+        <mxCell id="l1-e13" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-sg01" target="l1-n15" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 保存 -> 登録完了 -->
+        <mxCell id="l1-e14" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n15" target="l1-n16" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 登録完了 -> ロット検索画面 -->
+        <mxCell id="l1-e15" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n16" target="l1-n17" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ロット検索画面 -> 終了 -->
+        <mxCell id="l1-e16" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="l1-n17" target="l1-n18" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

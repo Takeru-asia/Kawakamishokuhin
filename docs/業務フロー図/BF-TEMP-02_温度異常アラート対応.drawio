@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="BF-TEMP-02 温度異常アラート対応" id="bf-temp-02">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Start -->
+        <mxCell id="temp2-1" value="アラート管理画面を開く" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="40" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Fetch alert list -->
+        <mxCell id="temp2-2" value="アラート一覧を取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="120" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e1" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-1" target="temp2-2" parent="1"/>
+
+        <!-- Filter decision -->
+        <mxCell id="temp2-3" value="ステータスで&#xa;フィルタ？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="210" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e2" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-2" target="temp2-3" parent="1"/>
+
+        <!-- Filter options -->
+        <mxCell id="temp2-4a" value="全件表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="310" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-4b" value="未対応(OPEN)表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="310" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-4c" value="確認済み&#xa;(ACKNOWLEDGED)表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="470" y="310" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-4d" value="解決済み&#xa;(RESOLVED)表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="310" width="150" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="temp2-e3a" value="全件" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-3" target="temp2-4a" parent="1"/>
+        <mxCell id="temp2-e3b" value="OPEN" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-3" target="temp2-4b" parent="1"/>
+        <mxCell id="temp2-e3c" value="ACKNOWLEDGED" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-3" target="temp2-4c" parent="1"/>
+        <mxCell id="temp2-e3d" value="RESOLVED" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-3" target="temp2-4d" parent="1"/>
+
+        <!-- Select alert -->
+        <mxCell id="temp2-5" value="アラートを選択" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="400" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e4a" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-4a" target="temp2-5" parent="1"/>
+        <mxCell id="temp2-e4b" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-4b" target="temp2-5" parent="1"/>
+        <mxCell id="temp2-e4c" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-4c" target="temp2-5" parent="1"/>
+        <mxCell id="temp2-e4d" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-4d" target="temp2-5" parent="1"/>
+
+        <!-- Role decision -->
+        <mxCell id="temp2-6" value="ユーザー&#xa;ロールは？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="490" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e5" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-5" target="temp2-6" parent="1"/>
+
+        <!-- Worker: read only -->
+        <mxCell id="temp2-7a" value="閲覧のみ" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="500" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e6a" value="WORKER" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-6" target="temp2-7a" parent="1"/>
+
+        <!-- Worker end -->
+        <mxCell id="temp2-end1" value="終了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="590" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e7a" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-7a" target="temp2-end1" parent="1"/>
+
+        <!-- Manager/Admin: status change -->
+        <mxCell id="temp2-7b" value="ステータス変更可能" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="500" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e6b" value="MANAGER / ADMIN" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-6" target="temp2-7b" parent="1"/>
+
+        <!-- Current status decision -->
+        <mxCell id="temp2-8" value="現在の&#xa;ステータスは？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="610" y="600" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e7b" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-7b" target="temp2-8" parent="1"/>
+
+        <!-- OPEN branch -->
+        <mxCell id="temp2-9a" value="対応内容は？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="710" width="140" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e8a" value="OPEN" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-8" target="temp2-9a" parent="1"/>
+
+        <!-- Acknowledge only -->
+        <mxCell id="temp2-10a" value="ACKNOWLEDGED&#xa;に変更" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="200" y="810" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e9a1" value="確認のみ" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-9a" target="temp2-10a" parent="1"/>
+
+        <!-- Corrective action from OPEN -->
+        <mxCell id="temp2-10b" value="是正措置を入力" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="810" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e9a2" value="是正完了" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-9a" target="temp2-10b" parent="1"/>
+
+        <!-- OPEN -> corrective -> RESOLVED -->
+        <mxCell id="temp2-10b2" value="RESOLVEDに変更" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="890" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e10b" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-10b" target="temp2-10b2" parent="1"/>
+
+        <!-- ACKNOWLEDGED branch -->
+        <mxCell id="temp2-9b" value="是正措置を入力" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="810" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e8b" value="ACKNOWLEDGED" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-8" target="temp2-9b" parent="1"/>
+
+        <mxCell id="temp2-9b2" value="RESOLVEDに変更" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="890" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e9b" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-9b" target="temp2-9b2" parent="1"/>
+
+        <!-- RESOLVED branch -->
+        <mxCell id="temp2-9c" value="対応済み" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="880" y="710" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e8c" value="RESOLVED" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-8" target="temp2-9c" parent="1"/>
+
+        <!-- RESOLVED -> end directly -->
+        <mxCell id="temp2-end2" value="終了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="880" y="810" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e9c" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-9c" target="temp2-end2" parent="1"/>
+
+        <!-- Save -->
+        <mxCell id="temp2-11" value="保存" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="980" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e10a2" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-10a" target="temp2-11" parent="1"/>
+        <mxCell id="temp2-e10b3" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-10b2" target="temp2-11" parent="1"/>
+        <mxCell id="temp2-e9b3" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-9b2" target="temp2-11" parent="1"/>
+
+        <!-- Auto record -->
+        <mxCell id="temp2-12" value="対応者・対応日時を&#xa;自動記録" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1060" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e11" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-11" target="temp2-12" parent="1"/>
+
+        <!-- Dashboard banner update -->
+        <mxCell id="temp2-13" value="ダッシュボードの&#xa;アラートバナー更新" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1140" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e12" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-12" target="temp2-13" parent="1"/>
+
+        <!-- End -->
+        <mxCell id="temp2-end3" value="終了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1230" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="temp2-e13" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="temp2-13" target="temp2-end3" parent="1"/>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
