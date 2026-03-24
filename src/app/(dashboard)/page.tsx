@@ -56,7 +56,7 @@ export default function DashboardPage() {
       )}
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-4 gap-5 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-6">
         <KPICard
           title="本日の製造数量"
           value={kpi ? kpi.todayProduction.toLocaleString() : "—"}
@@ -89,8 +89,8 @@ export default function DashboardPage() {
       </div>
 
       {/* Charts and Temperature Grid */}
-      <div className="grid grid-cols-3 gap-6 mb-6">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div className="lg:col-span-2">
           <Card
             title="製造実績（過去60日間）"
             action={<Link href="/production" className="text-sm text-[#1a5f2a]">詳細を見る →</Link>}
@@ -150,7 +150,7 @@ export default function DashboardPage() {
 
       {/* Quick Actions */}
       <Card title="クイックアクション">
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           <Link href="/production/new">
             <QuickAction icon={<Plus className="w-6 h-6" />} label="製造実績を登録" />
           </Link>

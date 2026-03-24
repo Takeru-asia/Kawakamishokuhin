@@ -5,6 +5,7 @@ import { createUser, updateUser, deleteUser } from "@/actions/master";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Modal } from "@/components/ui/modal";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { Badge } from "@/components/ui/badge";
 import { Plus, Pencil, Trash2 } from "lucide-react";
 
@@ -16,6 +17,7 @@ type User = { id: string; name: string; email: string; role: string; createdAt: 
 export function UsersClient({ users }: { users: User[] }) {
   const [showModal, setShowModal] = useState(false);
   const [editing, setEditing] = useState<User | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<User | null>(null);
   const [createState, createAction, createPending] = useActionState(createUser, null);
   const [updateState, updateAction, updatePending] = useActionState(updateUser, null);
 
@@ -48,7 +50,7 @@ export function UsersClient({ users }: { users: User[] }) {
                   <button onClick={() => { setEditing(u); setShowModal(true); }} className="p-1 text-gray-400 hover:text-blue-600">
                     <Pencil className="w-4 h-4" />
                   </button>
-                  <button onClick={async () => { if (confirm(`「${u.name}」を削除しますか？`)) await deleteUser(u.id); }} className="p-1 text-gray-400 hover:text-red-600 ml-2">
+                  <button onClick={() => setDeleteTarget(u)} className="p-1 text-gray-400 hover:text-red-600 ml-2">
                     <Trash2 className="w-4 h-4" />
                   </button>
                 </td>
@@ -94,6 +96,19 @@ export function UsersClient({ users }: { users: User[] }) {
           </div>
         </form>
       </Modal>
+
+      <ConfirmDialog
+        open={!!deleteTarget}
+        title="ユーザーの削除"
+        message={`「${deleteTarget?.name}」を削除しますか？この操作は元に戻せません。`}
+        confirmLabel="削除"
+        variant="danger"
+        onConfirm={async () => {
+          if (deleteTarget) await deleteUser(deleteTarget.id);
+          setDeleteTarget(null);
+        }}
+        onCancel={() => setDeleteTarget(null)}
+      />
     </div>
   );
 }

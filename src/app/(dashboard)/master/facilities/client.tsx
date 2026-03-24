@@ -5,6 +5,7 @@ import { createFacility, updateFacility, deleteFacility } from "@/actions/master
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Modal } from "@/components/ui/modal";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { Badge } from "@/components/ui/badge";
 import { Plus, Pencil, Trash2 } from "lucide-react";
 
@@ -23,6 +24,7 @@ type Facility = {
 export function FacilitiesClient({ facilities, canEdit }: { facilities: Facility[]; canEdit: boolean }) {
   const [showModal, setShowModal] = useState(false);
   const [editing, setEditing] = useState<Facility | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<Facility | null>(null);
   const [createState, createAction, createPending] = useActionState(createFacility, null);
   const [updateState, updateAction, updatePending] = useActionState(updateFacility, null);
 
@@ -64,7 +66,7 @@ export function FacilitiesClient({ facilities, canEdit }: { facilities: Facility
                     <button onClick={() => { setEditing(f); setShowModal(true); }} className="p-1 text-gray-400 hover:text-blue-600">
                       <Pencil className="w-4 h-4" />
                     </button>
-                    <button onClick={async () => { if (confirm(`「${f.name}」を削除しますか？`)) await deleteFacility(f.id); }} className="p-1 text-gray-400 hover:text-red-600 ml-2">
+                    <button onClick={() => setDeleteTarget(f)} className="p-1 text-gray-400 hover:text-red-600 ml-2">
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </td>
@@ -120,6 +122,19 @@ export function FacilitiesClient({ facilities, canEdit }: { facilities: Facility
           </div>
         </form>
       </Modal>
+
+      <ConfirmDialog
+        open={!!deleteTarget}
+        title="設備の削除"
+        message={`「${deleteTarget?.name}」を削除しますか？この操作は元に戻せません。`}
+        confirmLabel="削除"
+        variant="danger"
+        onConfirm={async () => {
+          if (deleteTarget) await deleteFacility(deleteTarget.id);
+          setDeleteTarget(null);
+        }}
+        onCancel={() => setDeleteTarget(null)}
+      />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { createMaterial, updateMaterial, deleteMaterial } from "@/actions/master
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Modal } from "@/components/ui/modal";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { Plus, Pencil, Trash2 } from "lucide-react";
 
 type Material = { id: string; code: string; name: string; unit: string; supplier: string | null };
@@ -12,6 +13,7 @@ type Material = { id: string; code: string; name: string; unit: string; supplier
 export function MaterialsClient({ materials, canEdit }: { materials: Material[]; canEdit: boolean }) {
   const [showModal, setShowModal] = useState(false);
   const [editing, setEditing] = useState<Material | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<Material | null>(null);
   const [createState, createAction, createPending] = useActionState(createMaterial, null);
   const [updateState, updateAction, updatePending] = useActionState(updateMaterial, null);
 
@@ -49,7 +51,7 @@ export function MaterialsClient({ materials, canEdit }: { materials: Material[];
                     <button onClick={() => { setEditing(m); setShowModal(true); }} className="p-1 text-gray-400 hover:text-blue-600">
                       <Pencil className="w-4 h-4" />
                     </button>
-                    <button onClick={async () => { if (confirm(`「${m.name}」を削除しますか？`)) await deleteMaterial(m.id); }} className="p-1 text-gray-400 hover:text-red-600 ml-2">
+                    <button onClick={() => setDeleteTarget(m)} className="p-1 text-gray-400 hover:text-red-600 ml-2">
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </td>
@@ -90,6 +92,19 @@ export function MaterialsClient({ materials, canEdit }: { materials: Material[];
           </div>
         </form>
       </Modal>
+
+      <ConfirmDialog
+        open={!!deleteTarget}
+        title="原材料の削除"
+        message={`「${deleteTarget?.name}」を削除しますか？この操作は元に戻せません。`}
+        confirmLabel="削除"
+        variant="danger"
+        onConfirm={async () => {
+          if (deleteTarget) await deleteMaterial(deleteTarget.id);
+          setDeleteTarget(null);
+        }}
+        onCancel={() => setDeleteTarget(null)}
+      />
     </div>
   );
 }
