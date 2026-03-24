@@ -1,73 +1,95 @@
-<mxfile host="Electron" modified="2026-02-25T16:03:47.598Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.0 Chrome/112.0.5615.204 Electron/24.5.1 Safari/537.36" version="21.5.0" etag="UYDFkNG0klxRyVEge67h" type="device">
-  <diagram name="BF-LOSS-02 ロス分析レポート" id="bf-loss-02">
-    <mxGraphModel dx="30560" dy="21160" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="2400" math="0" shadow="0">
+<mxfile host="Electron" modified="2026-02-26T04:17:25.462Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.0 Chrome/112.0.5615.204 Electron/24.5.1 Safari/537.36" etag="BrO1j417dQ-jdDAtnx0X" version="21.5.0" type="device">
+  <diagram id="bqINWSMfawCb0fkZdjoc" name="BF-LOSS-02 ロス分析レポート">
+    <mxGraphModel dx="10294" dy="7142" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="L2-1" value="ロス分析レポート表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="310" y="40" width="220" height="50" as="geometry" />
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-1" target="x3L8gvmh0Q1Lr9Hlyrem-2">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="L2-2" value="集計期間を選択&#xa;(開始日〜終了日)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="330" y="120" width="180" height="50" as="geometry" />
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-1" value="ロス分析レポート表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="475" y="178" width="220" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-e1" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-1" target="L2-2" edge="1" />
-        <mxCell id="L2-3" value="データ取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="330" y="200" width="180" height="50" as="geometry" />
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-2" target="x3L8gvmh0Q1Lr9Hlyrem-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="L2-e2" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-2" target="L2-3" edge="1" />
-        <mxCell id="L2-4a" value="ロス記録全件取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="100" y="290" width="180" height="50" as="geometry" />
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-2" value="集計期間を選択&#xa;(開始日〜終了日)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="495" y="258" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-e3a" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-3" target="L2-4a" edge="1" />
-        <mxCell id="L2-4b" value="製造実績全件取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="560" y="290" width="180" height="50" as="geometry" />
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-3" target="x3L8gvmh0Q1Lr9Hlyrem-4">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="L2-e3b" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-3" target="L2-4b" edge="1" />
-        <mxCell id="L2-5" value="集計処理" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="330" y="380" width="180" height="50" as="geometry" />
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-3" target="x3L8gvmh0Q1Lr9Hlyrem-5">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="L2-e4a" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-4a" target="L2-5" edge="1" />
-        <mxCell id="L2-e4b" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-4b" target="L2-5" edge="1" />
-        <mxCell id="L2-sg1" value="集計処理の詳細" style="fontColor=#333333;swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="180" y="470" width="480" height="260" as="geometry" />
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-3" value="データ取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="495" y="338" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-sg1a" value="カテゴリ別集計&#xa;(製造不良・破損・期限切れ・その他)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" parent="L2-sg1" vertex="1">
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-4" target="x3L8gvmh0Q1Lr9Hlyrem-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="628.125" y="506.125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-4" value="ロス記録全件取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="265" y="428" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-5" target="x3L8gvmh0Q1Lr9Hlyrem-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-5" value="製造実績全件取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="725" y="428" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-6" target="x3L8gvmh0Q1Lr9Hlyrem-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-6" value="集計処理" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="495" y="518" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-7" target="x3L8gvmh0Q1Lr9Hlyrem-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-7" value="集計処理の詳細" style="fontColor=#333333;swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="608" width="480" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-8" value="カテゴリ別集計&#xa;(製造不良・破損・期限切れ・その他)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="x3L8gvmh0Q1Lr9Hlyrem-7">
           <mxGeometry x="20" y="40" width="200" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-sg1b" value="製品別集計&#xa;(各製品のロス数量・件数)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" parent="L2-sg1" vertex="1">
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-9" value="製品別集計&#xa;(各製品のロス数量・件数)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="x3L8gvmh0Q1Lr9Hlyrem-7">
           <mxGeometry x="260" y="40" width="200" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-sg1c" value="全体集計&#xa;(総ロス数量・総製造数量)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" parent="L2-sg1" vertex="1">
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-10" value="全体集計&#xa;(総ロス数量・総製造数量)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="x3L8gvmh0Q1Lr9Hlyrem-7">
           <mxGeometry x="20" y="120" width="200" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-sg1d" value="全体ロス率算出&#xa;= 総ロス / 総製造 × 100" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" parent="L2-sg1" vertex="1">
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-11" value="全体ロス率算出&#xa;= 総ロス / 総製造 × 100" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="x3L8gvmh0Q1Lr9Hlyrem-7">
           <mxGeometry x="140" y="200" width="200" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-esg1a" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;" parent="L2-sg1" source="L2-sg1a" target="L2-sg1c" edge="1" />
-        <mxCell id="L2-esg1b" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;" parent="L2-sg1" source="L2-sg1b" target="L2-sg1c" edge="1" />
-        <mxCell id="L2-esg1c" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;" parent="L2-sg1" source="L2-sg1c" target="L2-sg1d" edge="1" />
-        <mxCell id="L2-e5" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-5" target="L2-sg1" edge="1" />
-        <mxCell id="L2-6" value="レポート表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="330" y="770" width="180" height="50" as="geometry" />
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-12" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;" edge="1" parent="x3L8gvmh0Q1Lr9Hlyrem-7" source="x3L8gvmh0Q1Lr9Hlyrem-8" target="x3L8gvmh0Q1Lr9Hlyrem-10" />
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-13" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;" edge="1" parent="x3L8gvmh0Q1Lr9Hlyrem-7" source="x3L8gvmh0Q1Lr9Hlyrem-9" target="x3L8gvmh0Q1Lr9Hlyrem-10" />
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-14" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;" edge="1" parent="x3L8gvmh0Q1Lr9Hlyrem-7" source="x3L8gvmh0Q1Lr9Hlyrem-10" target="x3L8gvmh0Q1Lr9Hlyrem-11" />
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-15" target="x3L8gvmh0Q1Lr9Hlyrem-16">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="L2-e6" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-sg1" target="L2-6" edge="1" />
-        <mxCell id="L2-sg2" value="レポート表示内容" style="fontColor=#333333;swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="210" y="860" width="420" height="200" as="geometry" />
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-15" value="レポート表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="495" y="908" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-sg2a" value="サマリ表示&#xa;(総ロス数量・総製造数量・&#xa;全体ロス率・記録件数)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" parent="L2-sg2" vertex="1">
+        <mxCell id="g7Mmrn7BLI03eUTJd8oN-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x3L8gvmh0Q1Lr9Hlyrem-16" target="x3L8gvmh0Q1Lr9Hlyrem-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-16" value="レポート表示内容" style="fontColor=#333333;swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="375" y="998" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-17" value="サマリ表示&#xa;(総ロス数量・総製造数量・&#xa;全体ロス率・記録件数)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="x3L8gvmh0Q1Lr9Hlyrem-16">
           <mxGeometry x="20" y="40" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="L2-sg2b" value="カテゴリ別内訳&#xa;円グラフ" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" parent="L2-sg2" vertex="1">
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-18" value="カテゴリ別内訳&#xa;円グラフ" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="x3L8gvmh0Q1Lr9Hlyrem-16">
           <mxGeometry x="220" y="40" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="L2-sg2c" value="製品別ロス一覧&#xa;テーブル" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" parent="L2-sg2" vertex="1">
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-19" value="製品別ロス一覧&#xa;テーブル" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="x3L8gvmh0Q1Lr9Hlyrem-16">
           <mxGeometry x="120" y="130" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-e7" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-6" target="L2-sg2" edge="1" />
-        <mxCell id="L2-7" value="終了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="350" y="1100" width="140" height="50" as="geometry" />
+        <mxCell id="x3L8gvmh0Q1Lr9Hlyrem-20" value="終了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="515" y="1238" width="140" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="L2-e8" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="L2-sg2" target="L2-7" edge="1" />
       </root>
     </mxGraphModel>
   </diagram>

@@ -1,11 +1,11 @@
-<mxfile host="Electron" modified="2026-02-25T16:00:17.985Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.0 Chrome/112.0.5615.204 Electron/24.5.1 Safari/537.36" version="21.5.0" etag="bXr-dO3RQ-1L6vv5V3Lg" type="device">
+<mxfile host="Electron" modified="2026-02-26T03:40:38.926Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.0 Chrome/112.0.5615.204 Electron/24.5.1 Safari/537.36" etag="07cB6d28-OINmocdH2-e" version="21.5.0" type="device">
   <diagram name="BF-00-02 業務領域間の関連" id="bf0002-domain-relations">
-    <mxGraphModel dx="1220" dy="945" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1406" dy="934" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="d2-sg01" value="マスタ管理" style="fontColor=#333333;swimlane;startSize=30;fillColor=#E6E6E6;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="-22" y="36" width="200" height="340" as="geometry" />
+          <mxGeometry x="102" y="145" width="200" height="340" as="geometry" />
         </mxCell>
         <mxCell id="d2-n01" value="製品マスタ" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="d2-sg01" vertex="1">
           <mxGeometry x="15" y="45" width="170" height="45" as="geometry" />
@@ -20,7 +20,7 @@
           <mxGeometry x="15" y="225" width="170" height="45" as="geometry" />
         </mxCell>
         <mxCell id="d2-sg02" value="P1: HACCP管理" style="fontColor=#333333;swimlane;startSize=30;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1;fontSize=13;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="320" y="40" width="200" height="340" as="geometry" />
+          <mxGeometry x="444" y="149" width="200" height="340" as="geometry" />
         </mxCell>
         <mxCell id="d2-n05" value="温度管理" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="d2-sg02" vertex="1">
           <mxGeometry x="15" y="45" width="170" height="45" as="geometry" />
@@ -35,7 +35,7 @@
           <mxGeometry x="15" y="226" width="170" height="45" as="geometry" />
         </mxCell>
         <mxCell id="d2-sg03" value="P2: 原価管理" style="fontColor=#333333;swimlane;startSize=30;fillColor=#D5E8D4;strokeColor=#82B366;fontStyle=1;fontSize=13;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="633" y="40" width="200" height="220" as="geometry" />
+          <mxGeometry x="757" y="149" width="200" height="220" as="geometry" />
         </mxCell>
         <mxCell id="d2-n09" value="製造目標" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="d2-sg03" vertex="1">
           <mxGeometry x="15" y="45" width="170" height="45" as="geometry" />
@@ -44,56 +44,56 @@
           <mxGeometry x="15" y="105" width="170" height="45" as="geometry" />
         </mxCell>
         <mxCell id="d2-n11" value="アラート管理&lt;br&gt;（異常検知）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="320" y="450" width="200" height="50" as="geometry" />
+          <mxGeometry x="444" y="559" width="200" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d2-n12" value="追跡・レポート&lt;br&gt;（トレーサビリティ）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="610" y="450" width="200" height="50" as="geometry" />
+          <mxGeometry x="734" y="559" width="200" height="50" as="geometry" />
         </mxCell>
         <mxCell id="d2-e01" value="設備情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" parent="1" source="d2-n03" target="d2-n05" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="78" y="197" />
-              <mxPoint x="420" y="197" />
+              <mxPoint x="202" y="306" />
+              <mxPoint x="544" y="306" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="d2-e02" value="設備情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" parent="1" source="d2-n03" target="d2-n08" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="257" y="228" />
-              <mxPoint x="257" y="308" />
+              <mxPoint x="381" y="337" />
+              <mxPoint x="381" y="417" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="d2-e03" value="製品情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" parent="1" source="d2-n01" target="d2-n06" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="235" y="108" />
-              <mxPoint x="235" y="188" />
+              <mxPoint x="359" y="217" />
+              <mxPoint x="359" y="297" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="d2-e04" value="製品情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" parent="1" source="d2-n01" target="d2-n07" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="208" y="108" />
-              <mxPoint x="208" y="248" />
+              <mxPoint x="332" y="217" />
+              <mxPoint x="332" y="357" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="d2-e05" value="原材料情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" parent="1" source="d2-n02" target="d2-n07" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="290" y="168" />
-              <mxPoint x="290" y="248" />
+              <mxPoint x="414" y="277" />
+              <mxPoint x="414" y="357" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="d2-e06" value="製品情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="d2-n01" target="d2-n09" edge="1">
           <mxGeometry x="0.0195" relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="215" y="8" />
-              <mxPoint x="710" y="8" />
+              <mxPoint x="339" y="117" />
+              <mxPoint x="834" y="117" />
             </Array>
             <mxPoint as="offset" />
           </mxGeometry>
@@ -101,9 +101,9 @@
         <mxCell id="d2-e07" value="製品情報" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" parent="1" source="d2-n01" target="d2-n10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="130" y="-26" />
-              <mxPoint x="570" y="-26" />
-              <mxPoint x="570" y="168" />
+              <mxPoint x="254" y="83" />
+              <mxPoint x="694" y="83" />
+              <mxPoint x="694" y="277" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -113,33 +113,33 @@
         <mxCell id="d2-e09" value="実績データ" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" parent="1" source="d2-n06" target="d2-n09" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="550" y="188" />
-              <mxPoint x="550" y="108" />
+              <mxPoint x="674" y="297" />
+              <mxPoint x="674" y="217" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="d2-e10" value="製造数量" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#666666;" parent="1" source="d2-n06" target="d2-n10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="564" y="174" />
-              <mxPoint x="564" y="174" />
+              <mxPoint x="688" y="283" />
+              <mxPoint x="688" y="283" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="d2-e11" value="異常検知" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#B85450;fontStyle=1;" parent="1" source="d2-n05" target="d2-n11" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="528" y="108" />
-              <mxPoint x="528" y="475" />
+              <mxPoint x="652" y="217" />
+              <mxPoint x="652" y="584" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="d2-e12" value="トレーサビリティ" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=10;fontColor=#9673A6;fontStyle=1;" parent="1" source="d2-n07" target="d2-n12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="590" y="248" />
-              <mxPoint x="590" y="420" />
-              <mxPoint x="710" y="420" />
+              <mxPoint x="714" y="357" />
+              <mxPoint x="714" y="529" />
+              <mxPoint x="834" y="529" />
             </Array>
           </mxGeometry>
         </mxCell>

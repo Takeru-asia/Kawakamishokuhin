@@ -1,176 +1,122 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" type="device">
+<mxfile host="Electron" modified="2026-02-25T16:30:13.738Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.0 Chrome/112.0.5615.204 Electron/24.5.1 Safari/537.36" version="21.5.0" etag="1FgQ6hlt5uFkG0D8rqEO" type="device">
   <diagram name="BF-PROD-02 製造実績編集" id="bf-prod-02">
-    <mxGraphModel dx="1422" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1400" math="0" shadow="0">
+    <mxGraphModel dx="984" dy="654" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="1400" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-
-        <!-- Row 1: 製造実績編集開始 -->
-        <mxCell id="p2-n01" value="&lt;b&gt;製造実績編集開始&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="350" y="30" width="140" height="50" as="geometry"/>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p2-n01" value="&lt;b&gt;製造実績編集開始&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="30" width="140" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Row 2: 一覧画面 -->
-        <mxCell id="p2-n02" value="一覧画面" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="110" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n02" value="一覧画面" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="110" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Row 3: 対象を選択 -->
-        <mxCell id="p2-n03" value="対象を選択" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="190" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n03" value="対象を選択" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="190" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Row 4: 詳細画面表示 -->
-        <mxCell id="p2-n04" value="詳細画面表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="270" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n04" value="詳細画面表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="270" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Row 5: 分岐 ユーザーロールは？ -->
-        <mxCell id="p2-n05" value="ユーザー&lt;br&gt;ロールは？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="350" y="350" width="140" height="70" as="geometry"/>
+        <mxCell id="p2-n05" value="ユーザー&lt;br&gt;ロールは？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="350" y="350" width="140" height="70" as="geometry" />
         </mxCell>
-
-        <!-- Left: WORKER 閲覧のみ -->
-        <mxCell id="p2-n06" value="閲覧のみ&lt;br&gt;（編集ボタン非表示）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="100" y="360" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n06" value="閲覧のみ&lt;br&gt;（編集ボタン非表示）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="100" y="360" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Left: WORKER -> 終了 -->
-        <mxCell id="p2-n07" value="&lt;b&gt;終了&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="120" y="450" width="140" height="50" as="geometry"/>
+        <mxCell id="p2-n07" value="&lt;b&gt;終了&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="120" y="450" width="140" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Right: 編集ボタン表示 -->
-        <mxCell id="p2-n08" value="編集ボタン表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="460" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n08" value="編集ボタン表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="460" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 編集ボタン押下 -->
-        <mxCell id="p2-n09" value="編集ボタン押下" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="540" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n09" value="編集ボタン押下" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="540" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 編集フォーム表示 -->
-        <mxCell id="p2-n10" value="編集フォーム表示&lt;br&gt;（数量・備考が変更可能）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="620" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n10" value="編集フォーム表示&lt;br&gt;（数量・備考が変更可能）" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="620" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 修正 -->
-        <mxCell id="p2-n11" value="修正" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="700" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n11" value="修正" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="700" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 保存ボタン押下 -->
-        <mxCell id="p2-n12" value="保存ボタン押下" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="780" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n12" value="保存ボタン押下" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="780" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 分岐: 入力値バリデーション -->
-        <mxCell id="p2-n13" value="入力値&lt;br&gt;バリデーション" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="350" y="860" width="140" height="70" as="geometry"/>
+        <mxCell id="p2-n13" value="入力値&lt;br&gt;バリデーション" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="350" y="860" width="140" height="70" as="geometry" />
         </mxCell>
-
-        <!-- エラー表示 -->
-        <mxCell id="p2-n14" value="エラー表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="600" y="870" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n14" value="エラー表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="600" y="870" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 製造実績を更新 -->
-        <mxCell id="p2-n15" value="製造実績を更新" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="970" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n15" value="製造実績を更新" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="970" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 更新完了 -->
-        <mxCell id="p2-n16" value="更新完了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="1050" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n16" value="更新完了" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1050" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 詳細画面に更新内容反映 -->
-        <mxCell id="p2-n17" value="詳細画面に更新内容反映" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="330" y="1130" width="180" height="50" as="geometry"/>
+        <mxCell id="p2-n17" value="詳細画面に更新内容反映" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1130" width="180" height="50" as="geometry" />
         </mxCell>
-
-        <!-- 終了 -->
-        <mxCell id="p2-n18" value="&lt;b&gt;終了&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="350" y="1210" width="140" height="50" as="geometry"/>
+        <mxCell id="p2-n18" value="&lt;b&gt;終了&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="1210" width="140" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Edges -->
-        <mxCell id="p2-e01" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n01" target="p2-n02" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e01" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n01" target="p2-n02" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e02" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n02" target="p2-n03" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e02" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n02" target="p2-n03" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e03" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n03" target="p2-n04" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e03" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n03" target="p2-n04" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e04" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n04" target="p2-n05" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e04" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n04" target="p2-n05" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- ロール分岐: WORKER -> 閲覧のみ -->
-        <mxCell id="p2-e05" value="WORKER" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;fontStyle=1;fontColor=#b85450;" edge="1" source="p2-n05" target="p2-n06" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e05" value="WORKER" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;fontStyle=1;fontColor=#b85450;" parent="1" source="p2-n05" target="p2-n06" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- 閲覧のみ -> 終了(左) -->
-        <mxCell id="p2-e06" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n06" target="p2-n07" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e06" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n06" target="p2-n07" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- ロール分岐: MANAGER/ADMIN -> 編集ボタン表示 -->
-        <mxCell id="p2-e07" value="MANAGER/ADMIN" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n05" target="p2-n08" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e07" value="MANAGER/ADMIN" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n05" target="p2-n08" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="p2-e08" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n08" target="p2-n09" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e08" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n08" target="p2-n09" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e09" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n09" target="p2-n10" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e09" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n09" target="p2-n10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e10" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n10" target="p2-n11" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e10" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n10" target="p2-n11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e11" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n11" target="p2-n12" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e11" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n11" target="p2-n12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e12" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n12" target="p2-n13" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e12" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n12" target="p2-n13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- バリデーション: 不正 -> エラー -->
-        <mxCell id="p2-e13" value="不正" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;fontStyle=1;fontColor=#b85450;" edge="1" source="p2-n13" target="p2-n14" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e13" value="不正" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;fontStyle=1;fontColor=#b85450;" parent="1" source="p2-n13" target="p2-n14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- エラー -> フォームに戻る -->
-        <mxCell id="p2-e14" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n14" target="p2-n10" parent="1">
+        <mxCell id="p2-e14" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n14" target="p2-n10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="780" y="895"/>
-              <mxPoint x="780" y="645"/>
+              <mxPoint x="780" y="895" />
+              <mxPoint x="780" y="645" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- バリデーション: 正常 -> 更新 -->
-        <mxCell id="p2-e15" value="正常" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n13" target="p2-n15" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e15" value="正常" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n13" target="p2-n15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="p2-e16" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n15" target="p2-n16" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e16" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n15" target="p2-n16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e17" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n16" target="p2-n17" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e17" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n16" target="p2-n17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p2-e18" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" edge="1" source="p2-n17" target="p2-n18" parent="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="p2-e18" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="p2-n17" target="p2-n18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
       </root>
     </mxGraphModel>
   </diagram>
