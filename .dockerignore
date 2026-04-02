@@ -4,6 +4,9 @@ node_modules
 .gitignore
 .env
 .env.local
+.env.production
+.env.production.example
 docs
 *.md
 !README.md
+deploy.sh
