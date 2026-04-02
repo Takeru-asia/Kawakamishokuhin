@@ -100,9 +100,9 @@ export default function DashboardPage() {
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={chartData}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                    <XAxis dataKey="label" tick={{ fontSize: 12 }} />
-                    <YAxis tick={{ fontSize: 12 }} />
-                    <Tooltip />
+                    <XAxis dataKey="label" tick={false} />
+                    <YAxis tick={false} />
+                    <Tooltip labelStyle={{ fontSize: 13, fontWeight: 600 }} />
                     <Bar dataKey="total" fill="#22c55e" radius={[4, 4, 0, 0]} name="製造数" />
                   </BarChart>
                 </ResponsiveContainer>
