@@ -80,66 +80,43 @@ JWT_SECRET="change-this-to-a-secure-random-string-in-production"
 - API routes return JSON with consistent error format
 - Components use Tailwind utility classes
 
-## Production Server（川上食品）
+## Production（Vercel + Neon）— 2026-09-18 移行
 
 | 項目 | 値 |
 |------|-----|
-| OS | Windows Server 2025 Standard |
-| IP | 192.168.1.250 |
-| ユーザー | Administrator |
-| SSH | 公開鍵認証済み（パスワード不要） |
-| DB | PostgreSQL 17（Dockerコンテナ予定） |
-| VPN | L2TP/IPsec 必須（社外からアクセスする場合） |
+| URL | https://kawakami-haccp.vercel.app |
+| Vercel | team `blended-asia` / project `kawakami-haccp`（CLI デプロイ。GitHub 連携は未設定） |
+| DB | Neon Postgres `kawakami-haccp-db`（Vercel Marketplace, region sin1） |
+| Build | `vercel.json`: `prisma generate && prisma migrate deploy && next build`（マイグレーションはビルド時に自動適用） |
+| Env (production) | `DATABASE_URL`(pooled) / `DATABASE_URL_UNPOOLED`(CLI用) / `JWT_SECRET` / `ADMIN_INITIAL_PASSWORD` （TZ は Vercel 予約変数のため `src/instrumentation.ts` で `process.env.TZ=Asia/Tokyo` を設定） |
 
-### 社外から作業する場合
-
-MacのVPN設定（システム設定 → VPN）で「川上食品」をオンにしてからSSH接続する。
-
-### SSH接続
+### デプロイ
 
 ```bash
-ssh Administrator@192.168.1.250
+npm run build && npx tsc --noEmit && npm run test:run   # ローカル確認
+vercel --prod --yes                                     # 本番デプロイ（migrate 込み）
 ```
 
-`~/.ssh/config` にエイリアス設定済みの場合：
+### 本番DBに対する操作（seed 等）
 
 ```bash
-ssh kawakami
+vercel env pull /tmp/.env.prod --environment=production --yes
+set -a; source /tmp/.env.prod; set +a
+npx tsx prisma/seed.ts        # マスタ（冪等）
+npx tsx prisma/seed-dummy.ts  # デモ用ダミー（60日分・冪等ではない）
+npx tsx prisma/seed-lots.ts   # ロット・原材料紐付け（冪等）
 ```
 
-### デプロイ手順（暫定）
+### 本番 E2E
+
+⚠ 本番に対して実行すると温度記録（9.5℃・notes「E2E 本番検証（異常値）」）とアラートが**実データとして残る**。実行後は削除すること。
 
 ```bash
-# 1. ビルド確認
-npm run build
-
-# 2. サーバーに転送
-rsync -avz --exclude node_modules --exclude .git \
-  ./ Administrator@192.168.1.250:/opt/haccp/
-
-# 3. サーバー側で起動
-ssh Administrator@192.168.1.250 "cd /opt/haccp && docker compose up -d --build"
-```
-
-### サーバー保守コマンド（SSH接続後）
-
-```powershell
-# コンテナ状態確認
-docker compose ps
-
-# ログ確認
-docker compose logs --tail=50 app
-
-# 再起動
-docker compose restart app
-
-# DB接続確認
-docker compose exec db psql -U postgres -d kawakamishokuhin
+E2E_BASE_URL=https://kawakami-haccp.vercel.app E2E_ADMIN_PASSWORD=... npx playwright test e2e/production-golden-path.spec.ts
 ```
 
 ### 注意事項
 
-- `ssh-copy-id` はWindows PowerShellと非互換。公開鍵登録は手動で行うこと
-- ファイアウォールは `Profile: Any` で設定済み（変更しないこと）
-- 本番の `DATABASE_URL` はサーバー上の `.env` を参照（ローカルの `.env` と別管理）
-- Docker構成は `/opt/haccp/docker-compose.yml` で管理予定
+- `.env` / `.env.prod` / `.vercel` はコミットしない
+- **Vercel CLI 53.2 の `vercel env add` は値を空で保存する不具合あり**（stdin / `--value` とも再現）。秘密情報は REST API（`POST /v10/projects/{id}/env?upsert=true`）で登録し、`vercel env pull` で長さを検証すること
+- 旧オンプレ構成（Windows Server 192.168.1.250 / docker-compose / deploy.sh）は **廃止**。ファイルは参考として残置。詳細は `docs/deploy.md`

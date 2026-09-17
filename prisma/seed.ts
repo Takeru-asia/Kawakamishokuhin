@@ -6,6 +6,12 @@ import bcrypt from "bcryptjs";
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 
+// Initial admin password: set ADMIN_INITIAL_PASSWORD in production.
+const adminPassword = process.env.ADMIN_INITIAL_PASSWORD || "admin1234";
+if (!process.env.ADMIN_INITIAL_PASSWORD) {
+  console.warn("WARN: ADMIN_INITIAL_PASSWORD not set — using default dev password.");
+}
+
 async function main() {
   console.log("Seeding database...");
 
@@ -18,7 +24,7 @@ async function main() {
     create: {
       name: "管理者",
       email: "admin@kawakami-foods.co.jp",
-      passwordHash: await bcrypt.hash("admin1234", 10),
+      passwordHash: await bcrypt.hash(adminPassword, 10),
       role: Role.ADMIN,
       isActive: true,
     },
