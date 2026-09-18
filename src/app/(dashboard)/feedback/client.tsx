@@ -10,6 +10,12 @@ import { formatDateTime } from "@/lib/utils";
 const categoryLabels: Record<string, string> = { REQUEST: "要望", BUG: "不具合", QUESTION: "質問", OTHER: "その他" };
 const statusLabels: Record<string, string> = { NEW: "未確認", REVIEWED: "確認済", DONE: "対応済" };
 const statusVariant: Record<string, "warning" | "info" | "success"> = { NEW: "warning", REVIEWED: "info", DONE: "success" };
+// Mirrors the sidebar so users can point at a screen without typing
+const screenOptions = [
+  "ダッシュボード", "製造実績", "温度管理", "ロット追跡", "衛生管理",
+  "製造目標", "ロス管理", "製品マスタ", "原材料マスタ", "設備マスタ", "ユーザー管理",
+  "ログイン", "その他・全体",
+];
 
 type Feedback = {
   id: string; category: string; content: string; pageUrl: string | null; status: string;
@@ -45,7 +51,10 @@ export function FeedbackClient({ feedbacks, canReview }: { feedbacks: Feedback[]
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">関係する画面（任意）</label>
-            <input name="pageUrl" maxLength={500} className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1a5f2a]" placeholder="例: 温度管理の記録画面" />
+            <select name="pageUrl" className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1a5f2a]">
+              <option value="">選択しない</option>
+              {screenOptions.map((s) => <option key={s} value={s}>{s}</option>)}
+            </select>
           </div>
           <div className="flex justify-end">
             <Button type="submit" disabled={pending}>{pending ? "送信中..." : "送信する"}</Button>
