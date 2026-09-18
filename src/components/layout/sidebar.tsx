@@ -14,6 +14,7 @@ import {
   Layers,
   Building2,
   Users,
+  MessageSquare,
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -47,6 +48,12 @@ const navSections = [
       { href: "/master/materials", label: "原材料マスタ", icon: Layers },
       { href: "/master/facilities", label: "設備マスタ", icon: Building2 },
       { href: "/master/users", label: "ユーザー管理", icon: Users },
+    ],
+  },
+  {
+    title: "サポート",
+    items: [
+      { href: "/feedback", label: "フィードバック", icon: MessageSquare },
     ],
   },
 ];

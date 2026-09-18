@@ -31,14 +31,14 @@
 ## Stage 3: デプロイ・投入・実機確認（〜09:50）
 - [x] `vercel --prod` → migrate 成功
 - [x] seed（マスタ）+ seed-dummy（60日分）を本番DBへ投入
-- [ ] ブラウザで確認: ログイン → ダッシュボードKPI/グラフ → 温度記録登録（異常値でアラート発生）→ ロット追跡 → ロスレポート → ログアウト → 未認証で /api 401
+- [x] ブラウザで確認: ログイン → ダッシュボードKPI/グラフ → 温度記録登録（異常値でアラート発生）→ ロット追跡 → ロスレポート → ログアウト → 未認証で /api 401
 - 受入: 上記 golden path が本番URLで全て動く
 
 ## Stage 4: ドキュメント・記録（〜10:30）
 - [x] `CLAUDE.md` / `docs/deploy.md` をクラウド手順に更新（オンプレ手順は「旧」として残す）
-- [ ] commit → push → PR（main へ）
+- [x] commit → push → PR（main へ）: https://github.com/Takeru-asia/Kawakamishokuhin/pull/1
 - [x] Obsidian: `PJ_川上食品_HACCPMS/Status_現状把握_20260918.md`（現状・課題・本番URL・デモ手順）
-- [ ] Prep ブリーフに本番URL・ログイン情報を追記
+- [x] Prep ブリーフに本番URL・ログイン情報を追記
 
 ## スコープ外（会議後に /plan）
 監査ログ（訂正履歴）、ログインレート制限、健康管理記録、入庫出荷在庫、2/17要望3件、帳票PDF、独自ドメイン、Vercelアカウント移管（→ST）
@@ -46,3 +46,12 @@
 ## 実施ログ
 - 08:20 `vercel env add` が値を空で保存する不具合 → REST API で再登録、admin ハッシュを DB で再設定、再デプロイ
 - 08:25 `prisma/seed-lots.ts` 追加（ロット126件・紐付け252件）
+- 09:40 本番E2E 2/2 PASS（初回失敗はテストのセレクタがヘッダーのログアウトボタンに一致していたため）
+- 10:05 TZ修正（instrumentation.ts）を再デプロイ、PR #1 作成。gh は Takeru-asia に切替が必要だった
+
+## Stage 5（追加 10:10）: フィードバック投稿機能
+- [x] Prisma: `Feedback` モデル + enum（category / status）、migration `add_feedback`
+- [x] `validations/feedback.ts` / `actions/feedback.ts`（create / list / updateStatus）
+- [x] `/feedback` 1画面（投稿フォーム + 一覧。ADMIN/MANAGER は全件 + ステータス変更、WORKER は自分の分）
+- [x] サイドバー「サポート > フィードバック」
+- 受入: tsc / build / 本番で投稿→一覧表示（E2E追加は会議後）
