@@ -33,6 +33,9 @@ export async function POST(request: Request) {
     );
   }
 
+  // Track engagement: when the user last signed in
+  await prisma.user.update({ where: { id: user.id }, data: { lastLoginAt: new Date() } });
+
   const token = await signToken({
     userId: user.id,
     email: user.email,

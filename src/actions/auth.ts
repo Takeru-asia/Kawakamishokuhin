@@ -29,6 +29,9 @@ export async function loginAction(_prev: unknown, formData: FormData) {
     return { error: "メールアドレスまたはパスワードが正しくありません" };
   }
 
+  // Track engagement: when the user last signed in
+  await prisma.user.update({ where: { id: user.id }, data: { lastLoginAt: new Date() } });
+
   const token = await signToken({
     userId: user.id,
     email: user.email,
