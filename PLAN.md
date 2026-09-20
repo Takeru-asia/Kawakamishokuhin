@@ -55,3 +55,9 @@
 - [x] `/feedback` 1画面（投稿フォーム + 一覧。ADMIN/MANAGER は全件 + ステータス変更、WORKER は自分の分）
 - [x] サイドバー「サポート > フィードバック」
 - 受入: tsc / build / 本番で投稿→一覧表示（E2E追加は会議後）
+
+## Stage 6（追加 9/21）: 利用状況の可視化
+- [x] `User.lastLoginAt` + migration `add_user_last_login_at`、両ログイン経路で更新（ローカル検証済み）
+- [ ] 本番反映（`vercel --prod --yes`、ユーザー実行）
+
+## 状態: 9/18〜9/21 の作業は完了。次フェーズは会議後に /plan で別 PLAN を起こす（RESUME.md 参照）
