@@ -42,6 +42,19 @@ enum HygieneResult {
 // マスタ系（7テーブル）
 // ============================================================
 
+enum FeedbackCategory {
+  REQUEST
+  BUG
+  QUESTION
+  OTHER
+}
+
+enum FeedbackStatus {
+  NEW
+  REVIEWED
+  DONE
+}
+
 /// ユーザー
 model User {
   id           String   @id @default(uuid()) @db.Uuid
@@ -50,6 +63,7 @@ model User {
   passwordHash String   @map("password_hash") @db.VarChar(255)
   role         Role     @default(WORKER)
   isActive     Boolean  @default(true) @map("is_active")
+  lastLoginAt  DateTime? @map("last_login_at")
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
 
@@ -57,6 +71,7 @@ model User {
   productionRecords  ProductionRecord[]
   temperatureRecords TemperatureRecord[]
   hygieneRecords     HygieneRecord[]
+  feedbacks          Feedback[]
   resolvedAlerts     TemperatureAlert[]  @relation("AlertResolvedBy")
   productionTargets  ProductionTarget[]
   lossRecords        LossRecord[]
@@ -392,4 +407,23 @@ model LossRecord {
   @@index([recordDate])
   @@index([categoryId])
   @@map("loss_records")
+}
+
+/// ユーザーからのフィードバック（要望・不具合報告）
+model Feedback {
+  id            String           @id @default(uuid()) @db.Uuid
+  category      FeedbackCategory
+  content       String           @db.Text
+  pageUrl       String?          @map("page_url") @db.VarChar(500)
+  status        FeedbackStatus   @default(NEW)
+  submittedById String           @map("submitted_by") @db.Uuid
+  createdAt     DateTime         @default(now()) @map("created_at")
+  updatedAt     DateTime         @updatedAt @map("updated_at")
+
+  // Relations
+  submittedBy User @relation(fields: [submittedById], references: [id])
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("feedbacks")
 }

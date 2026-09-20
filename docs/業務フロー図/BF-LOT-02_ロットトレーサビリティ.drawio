@@ -1,0 +1,146 @@
+<mxfile host="Electron" modified="2026-02-25T16:04:55.634Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.0 Chrome/112.0.5615.204 Electron/24.5.1 Safari/537.36" version="21.5.0" etag="J1yOf72GG8CskzB-POix" type="device">
+  <diagram name="BF-LOT-02 ロットトレーサビリティ" id="bf-lot-02-traceability">
+    <mxGraphModel dx="984" dy="654" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lot-n01" value="&lt;b&gt;トレーサビリティ業務開始&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="315" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n02" value="ロット検索画面を開く" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="330" y="110" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n03" value="検索対象は？" style="fontColor=#333333;rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="350" y="190" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n04" value="キーワード入力&lt;br&gt;(ロット番号/製品名)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="10" y="290" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n05" value="検索実行" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="10" y="370" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n06" value="製品ロット一覧表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="10" y="450" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n07" value="ロットを選択" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="10" y="530" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n08" value="トレース詳細画面" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="10" y="610" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n09" value="キーワード入力&lt;br&gt;(ロット番号/原材料名)" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="290" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n10" value="検索実行" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="370" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n11" value="原材料ロット一覧表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="450" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n12" value="ロットを選択" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="530" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n13" value="トレース詳細画面" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="610" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-sg01" value="後方追跡（製品→原材料）" style="fontColor=#333333;swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" parent="1" vertex="1">
+          <mxGeometry y="700" width="200" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n14" value="LotLinkテーブルから&lt;br&gt;紐付け検索" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lot-sg01" vertex="1">
+          <mxGeometry x="10" y="40" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n15" value="原材料ロット一覧取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lot-sg01" vertex="1">
+          <mxGeometry x="10" y="100" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n16" value="ツリー表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lot-sg01" vertex="1">
+          <mxGeometry x="10" y="160" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e15" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="lot-sg01" source="lot-n14" target="lot-n15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e16" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="lot-sg01" source="lot-n15" target="lot-n16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-sg02" value="前方追跡（原材料→製品）" style="fontColor=#333333;swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="640" y="700" width="200" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n17" value="LotLinkテーブルから&lt;br&gt;紐付け検索" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lot-sg02" vertex="1">
+          <mxGeometry x="10" y="40" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n18" value="製品ロット一覧取得" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lot-sg02" vertex="1">
+          <mxGeometry x="10" y="100" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n19" value="ツリー表示" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lot-sg02" vertex="1">
+          <mxGeometry x="10" y="160" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e17" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="lot-sg02" source="lot-n17" target="lot-n18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e18" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="lot-sg02" source="lot-n18" target="lot-n19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-n20" value="&lt;b&gt;終了&lt;/b&gt;" style="fontColor=#333333;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="980" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e01" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n01" target="lot-n02" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e02" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n02" target="lot-n03" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e03" value="製品ロット" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;fontStyle=1;fontColor=#6c8ebf;" parent="1" source="lot-n03" target="lot-n04" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e04" value="原材料ロット" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;fontStyle=1;fontColor=#6c8ebf;" parent="1" source="lot-n03" target="lot-n09" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e05" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n04" target="lot-n05" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e06" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n05" target="lot-n06" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e07" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n06" target="lot-n07" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e08" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n07" target="lot-n08" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e09" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n09" target="lot-n10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e10" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n10" target="lot-n11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e11" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n11" target="lot-n12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e12" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n12" target="lot-n13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e13" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n08" target="lot-sg01" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e14" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-n13" target="lot-sg02" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lot-e19" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-sg01" target="lot-n20" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="960" />
+              <mxPoint x="420" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lot-e20" style="fontColor=#333333;edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;" parent="1" source="lot-sg02" target="lot-n20" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="960" />
+              <mxPoint x="420" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
