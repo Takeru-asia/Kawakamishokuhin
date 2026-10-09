@@ -12,8 +12,9 @@ const statusLabels: Record<string, string> = { NEW: "未確認", REVIEWED: "確�
 const statusVariant: Record<string, "warning" | "info" | "success"> = { NEW: "warning", REVIEWED: "info", DONE: "success" };
 // Mirrors the sidebar so users can point at a screen without typing
 const screenOptions = [
-  "ダッシュボード", "製造実績", "温度管理", "ロット追跡", "衛生管理",
-  "製造目標", "ロス管理", "製品マスタ", "原材料マスタ", "設備マスタ", "ユーザー管理",
+  "ダッシュボード", "製造実績", "製造予定", "温度管理", "ロット追跡", "衛生管理",
+  "出勤時チェック", "設備点検", "薬品使用記録",
+  "製造目標", "ロス管理", "製品マスタ", "原材料マスタ", "設備マスタ", "計器マスタ", "衛生カテゴリ", "ユーザー管理",
   "ログイン", "その他・全体",
 ];
 

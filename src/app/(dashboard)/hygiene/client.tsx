@@ -12,7 +12,7 @@ const resultLabels: Record<string, string> = { PASS: "合格", FAIL: "不合格"
 const resultVariant: Record<string, "success" | "danger" | "default"> = { PASS: "success", FAIL: "danger", NA: "default" };
 
 type HygieneRecord = {
-  id: string; recordDate: string; details: string; result: string; notes: string | null;
+  id: string; recordDate: string; details: string; result: string; measuredValue: string | null; notes: string | null;
   category: { name: string }; facility: { name: string } | null; recordedBy: { name: string };
 };
 type Category = { id: string; name: string };
@@ -76,12 +76,13 @@ export function HygieneListClient({
               <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 bg-gray-50">設備</th>
               <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 bg-gray-50">内容</th>
               <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 bg-gray-50">結果</th>
+              <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 bg-gray-50">残留塩素 (mg/L)</th>
               <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 bg-gray-50">記録者</th>
             </tr>
           </thead>
           <tbody>
             {records.length === 0 ? (
-              <tr><td colSpan={6} className="px-4 py-8 text-center text-sm text-gray-400">データがありません</td></tr>
+              <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-gray-400">データがありません</td></tr>
             ) : records.map((r) => (
               <tr key={r.id} className="border-b hover:bg-gray-50">
                 <td className="px-4 py-3 text-sm">{formatDate(r.recordDate)}</td>
@@ -89,6 +90,7 @@ export function HygieneListClient({
                 <td className="px-4 py-3 text-sm">{r.facility?.name || "—"}</td>
                 <td className="px-4 py-3 text-sm max-w-xs truncate">{r.details}</td>
                 <td className="px-4 py-3 text-sm"><Badge variant={resultVariant[r.result]}>{resultLabels[r.result]}</Badge></td>
+                <td className="px-4 py-3 text-sm font-mono">{r.measuredValue != null ? Number(r.measuredValue).toFixed(2) : ""}</td>
                 <td className="px-4 py-3 text-sm">{r.recordedBy.name}</td>
               </tr>
             ))}

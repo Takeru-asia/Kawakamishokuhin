@@ -15,6 +15,12 @@ import {
   Building2,
   Users,
   MessageSquare,
+  CalendarDays,
+  HeartPulse,
+  Wrench,
+  FlaskConical,
+  Gauge,
+  ListChecks,
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -28,10 +34,14 @@ const navSections = [
   {
     title: "HACCP管理",
     items: [
+      { href: "/production/plan", label: "製造予定", icon: CalendarDays },
       { href: "/production", label: "製造実績", icon: ClipboardList },
       { href: "/temperature", label: "温度管理", icon: Thermometer },
       { href: "/lots", label: "ロット追跡", icon: Search },
       { href: "/hygiene", label: "衛生管理", icon: ShieldCheck },
+      { href: "/health", label: "出勤時チェック", icon: HeartPulse },
+      { href: "/equipment-checks", label: "設備点検", icon: Wrench },
+      { href: "/chemicals", label: "薬品使用記録", icon: FlaskConical },
     ],
   },
   {
@@ -47,6 +57,8 @@ const navSections = [
       { href: "/master/products", label: "製品マスタ", icon: Package },
       { href: "/master/materials", label: "原材料マスタ", icon: Layers },
       { href: "/master/facilities", label: "設備マスタ", icon: Building2 },
+      { href: "/master/equipment", label: "計器マスタ", icon: Gauge },
+      { href: "/master/hygiene-categories", label: "衛生カテゴリ", icon: ListChecks },
       { href: "/master/users", label: "ユーザー管理", icon: Users },
     ],
   },
@@ -63,8 +75,17 @@ interface SidebarProps {
   onClose: () => void;
 }
 
+// Longest matching href wins, so "/production/plan" highlights 製造予定 only.
+const allHrefs = navSections.flatMap((s) => s.items.map((i) => i.href));
+function activeHref(pathname: string): string | undefined {
+  return allHrefs
+    .filter((h) => (h === "/" ? pathname === "/" : pathname === h || pathname.startsWith(h + "/")))
+    .sort((a, b) => b.length - a.length)[0];
+}
+
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
+  const current = activeHref(pathname);
 
   return (
     <>
@@ -104,10 +125,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               </div>
             )}
             {section.items.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
+              const isActive = item.href === current;
               const Icon = item.icon;
               return (
                 <Link

@@ -33,23 +33,23 @@
 | MISSING | 計器の実台数・名称 | マスタ画面で社長が登録。初期データは温度計1・スケール1のサンプル |
 
 ## Stage 1: 基盤（schema / migration / seed / constants）
-- [ ] `prisma/schema.prisma`: `ProductionPlan` + `ProductionPlanItem` + `ProductionPlanMaterial` / `Equipment` + `EquipmentCheck` / `HealthCheckRecord` / `ChemicalUsageRecord` / `HygieneRecord.measuredValue`
-- [ ] `prisma migrate dev --name add_president_requests_202610`（追加のみ。既存カラム変更なし）
-- [ ] `prisma/seed.ts`: 製品8品目、大豆3種、衛生カテゴリ「一般衛生」、計器サンプル2件（すべて upsert・冪等）
-- [ ] `src/lib/constants.ts`: `RESIDUAL_CHLORINE_MIN_MG_L = 0.1`, `FEVER_THRESHOLD_C = 37.5`
+- [x] `prisma/schema.prisma`: `ProductionPlan` + `ProductionPlanItem` + `ProductionPlanMaterial` / `Equipment` + `EquipmentCheck` / `HealthCheckRecord` / `ChemicalUsageRecord` / `HygieneRecord.measuredValue`
+- [x] `prisma migrate dev --name add_president_requests_202610`（追加のみ。既存カラム変更なし）
+- [x] `prisma/seed-202610.ts`（seed.ts は衛生カテゴリが非冪等のため別ファイル）: 製品8品目、大豆3種、衛生カテゴリ「一般衛生」、計器サンプル2件（すべて upsert・冪等）
+- [x] `src/lib/constants.ts`: `RESIDUAL_CHLORINE_MIN_MG_L = 0.1`, `FEVER_THRESHOLD_C = 37.5`
 - 受入: `npx prisma validate` / `npx prisma migrate dev` 成功 / `npx tsx prisma/seed.ts` 2回実行で重複なし
 
 ## Stage 2: 機能実装（3 グループを並列。ファイルは重複させない）
-- [ ] **G-A 製造予定 + ダッシュボード**: `validations/plan.ts`(+test) / `actions/plan.ts` / `app/(dashboard)/production/plan/{page,client}.tsx` / `api/dashboard/plan/route.ts` / `app/(dashboard)/page.tsx` に「本日の製造予定」「大豆仕込み数量」セクション
-- [ ] **G-B 設備点検 + 衛生カテゴリ + 残留塩素**: `validations/equipment.ts`(+test) / `actions/equipment.ts` / `app/(dashboard)/master/equipment/{page,client}.tsx` / `app/(dashboard)/equipment-checks/{page,client}.tsx` + `new/{page,client}.tsx` / `app/(dashboard)/master/hygiene-categories/{page,client}.tsx` + `actions/master.ts` 追記 / `validations/hygiene.ts` + `actions/hygiene.ts` + `hygiene/new/client.tsx` に measuredValue
-- [ ] **G-C 出勤時チェック + 薬品使用記録**: `validations/health.ts`(+test) / `actions/health.ts` / `app/(dashboard)/health/{page,client}.tsx` + `new/{page,client}.tsx` / `validations/chemicals.ts`(+test) / `actions/chemicals.ts` / `app/(dashboard)/chemicals/{page,client}.tsx` + `new/{page,client}.tsx`
-- [ ] 親: `components/layout/sidebar.tsx` にナビ追加、`feedback` 画面プルダウンに新画面を追加
+- [x] **G-A 製造予定 + ダッシュボード**: `validations/plan.ts`(+test) / `actions/plan.ts` / `app/(dashboard)/production/plan/{page,client}.tsx` / `api/dashboard/plan/route.ts` / `app/(dashboard)/page.tsx` に「本日の製造予定」「大豆仕込み数量」セクション
+- [x] **G-B 設備点検 + 衛生カテゴリ + 残留塩素**: `validations/equipment.ts`(+test) / `actions/equipment.ts` / `app/(dashboard)/master/equipment/{page,client}.tsx` / `app/(dashboard)/equipment-checks/{page,client}.tsx` + `new/{page,client}.tsx` / `app/(dashboard)/master/hygiene-categories/{page,client}.tsx` + `actions/master.ts` 追記 / `validations/hygiene.ts` + `actions/hygiene.ts` + `hygiene/new/client.tsx` に measuredValue
+- [x] **G-C 出勤時チェック + 薬品使用記録**: `validations/health.ts`(+test) / `actions/health.ts` / `app/(dashboard)/health/{page,client}.tsx` + `new/{page,client}.tsx` / `validations/chemicals.ts`(+test) / `actions/chemicals.ts` / `app/(dashboard)/chemicals/{page,client}.tsx` + `new/{page,client}.tsx`
+- [x] 親: `components/layout/sidebar.tsx` にナビ追加、`feedback` 画面プルダウンに新画面を追加
 - 受入: `npx tsc --noEmit` / `npm run test:run` / `npm run build` が通る。各画面が既存の loss/feedback と同じ action/validation 規約
 
 ## Stage 3: 検証
-- [ ] `/e2e`（既存 golden path + 新画面の登録→一覧の smoke）
-- [ ] `/design-review`（DESIGN_SYSTEM 準拠、白背景）
-- [ ] 境界: 製造予定の同日二重登録は upsert / 体温 34.0–42.0 / 残留塩素 0–5.00 / 数量 > 0
+- [x] `/e2e` 7/7 PASS（president-requests.spec.ts + smoke）
+- [x] `/design-review` PASS（iPad幅の折返し4件 + hydration不一致を修正: badge nowrap / 出勤時チェック表を8列に統合 / 日時フォーマットを JST 固定）
+- [x] 境界（qa-guardian WARN 3件修正: 残留塩素ガードを純関数化+UT4件 / 点検日のUTCずれ / 薬品月フィルタのUTCずれ）: 製造予定の同日二重登録は upsert / 体温 34.0–42.0 / 残留塩素 0–5.00 / 数量 > 0
 - 受入: e2e PASS、design-review PASS、qa-guardian BLOCK なし
 
 ## Stage 4: コミット・デプロイ・本番確認

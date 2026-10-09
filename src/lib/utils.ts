@@ -8,6 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export function formatDate(date: Date | string): string {
   const d = typeof date === "string" ? new Date(date) : date;
   return d.toLocaleDateString("ja-JP", {
+    timeZone: "Asia/Tokyo", // app is JST-only; fixed zone keeps SSR and browser output identical
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
@@ -17,6 +18,7 @@ export function formatDate(date: Date | string): string {
 export function formatDateTime(date: Date | string): string {
   const d = typeof date === "string" ? new Date(date) : date;
   return d.toLocaleString("ja-JP", {
+    timeZone: "Asia/Tokyo",
     year: "numeric",
     month: "2-digit",
     day: "2-digit",

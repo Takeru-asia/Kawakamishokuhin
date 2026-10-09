@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createHygieneRecord } from "@/actions/hygiene";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,9 @@ type Facility = { id: string; name: string };
 export function NewHygieneClient({ categories, facilities }: { categories: Category[]; facilities: Facility[] }) {
   const router = useRouter();
   const [state, formAction, pending] = useActionState(createHygieneRecord, null);
+  const [categoryId, setCategoryId] = useState("");
+  // Residual chlorine input is only relevant for water-quality categories
+  const isWaterQuality = categories.find((c) => c.id === categoryId)?.name.includes("水質") ?? false;
 
   useEffect(() => {
     if (state?.success) router.push("/hygiene");
@@ -25,11 +28,18 @@ export function NewHygieneClient({ categories, facilities }: { categories: Categ
           {state?.error && <div className="bg-red-50 text-red-600 text-sm p-3 rounded-lg">{state.error}</div>}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">カテゴリ</label>
-            <select name="categoryId" required className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1a5f2a]">
+            <select name="categoryId" required value={categoryId} onChange={(e) => setCategoryId(e.target.value)} className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1a5f2a]">
               <option value="">選択してください</option>
               {categories.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
             </select>
           </div>
+          {isWaterQuality && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">残留塩素濃度 (mg/L)</label>
+              <input name="measuredValue" type="number" step="0.01" min="0" max="5" required className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1a5f2a]" placeholder="例: 0.30" />
+              <p className="text-xs text-gray-500 mt-1">基準: 0.1 mg/L 以上</p>
+            </div>
+          )}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">設備（任意）</label>
             <select name="facilityId" className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1a5f2a]">

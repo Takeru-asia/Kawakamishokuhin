@@ -2,7 +2,8 @@
 
 import { prisma } from "@/lib/prisma";
 import { requireSession } from "@/lib/session";
-import { createHygieneRecordSchema } from "@/validations/hygiene";
+import { createHygieneRecordSchema, applyWaterQualityGuard } from "@/validations/hygiene";
+import { RESIDUAL_CHLORINE_MIN_MG_L } from "@/lib/constants";
 import { revalidatePath } from "next/cache";
 
 export async function getHygieneRecords(params?: { categoryId?: string; date?: string }) {
@@ -37,7 +38,24 @@ export async function createHygieneRecord(_prev: unknown, formData: FormData) {
   const parsed = createHygieneRecordSchema.safeParse(raw);
   if (!parsed.success) return { error: parsed.error.issues[0].message };
 
-  const { facilityId, ...data } = parsed.data;
+  const { facilityId, measuredValue, ...data } = parsed.data;
+  let result = data.result as "PASS" | "FAIL" | "NA";
+  let notes = data.notes || "";
+
+  // Water quality guard: residual chlorine must be recorded and meet the legal minimum.
+  // Never clamp the value; force FAIL and annotate so the deviation stays on record.
+  const category = await prisma.hygieneCategory.findUnique({ where: { id: data.categoryId } });
+  if (!category) return { error: "カテゴリが見つかりません" };
+  const guarded = applyWaterQualityGuard({
+    isWaterQuality: category.name.includes("水質"),
+    measuredValue,
+    result,
+    notes,
+    minMgL: RESIDUAL_CHLORINE_MIN_MG_L,
+  });
+  if ("error" in guarded) return { error: guarded.error };
+  result = guarded.result;
+  notes = guarded.notes;
 
   await prisma.hygieneRecord.create({
     data: {
@@ -45,9 +63,10 @@ export async function createHygieneRecord(_prev: unknown, formData: FormData) {
       facilityId: facilityId && facilityId !== "" ? facilityId : null,
       recordDate: new Date(data.recordDate),
       details: data.details,
-      result: data.result as "PASS" | "FAIL" | "NA",
+      result,
+      measuredValue: measuredValue ?? null,
       recordedById: session.userId,
-      notes: data.notes || null,
+      notes: notes || null,
     },
   });
 

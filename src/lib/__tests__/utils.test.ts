@@ -20,7 +20,8 @@ describe("formatDate", () => {
 
 describe("formatDateTime", () => {
   it("includes time component", () => {
-    const date = new Date("2026-03-24T14:30:00");
+    // Explicit JST offset: the formatter is pinned to Asia/Tokyo regardless of host time zone
+    const date = new Date("2026-03-24T14:30:00+09:00");
     const result = formatDateTime(date);
     expect(result).toMatch(/2026/);
     expect(result).toMatch(/14/);
