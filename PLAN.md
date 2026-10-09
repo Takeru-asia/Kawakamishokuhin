@@ -53,14 +53,23 @@
 - 受入: e2e PASS、design-review PASS、qa-guardian BLOCK なし
 
 ## Stage 4: コミット・デプロイ・本番確認
-- [ ] `/commit`（QA Gate）→ `vercel --prod --yes`（migrate 自動）→ 本番 seed（製品・大豆・カテゴリ・計器）
-- [ ] 本番で: ダッシュボードに予定セクション表示 / 各新画面 200 / 未認証 401
-- [ ] feedbacks 2件のステータスを IN_PROGRESS → 対応表送付後 RESOLVED
+- [x] コミット 59a4f92（qa-guardian WARN→修正済）→ `vercel --prod --yes` 成功（migration 適用）→ `seed-202610.ts` 本番投入
+- [x] 本番で: admin ログイン後に新画面 11 本すべて 200 / `/api/dashboard/plan` 未認証 401・認証後 200
+- [ ] feedbacks 2件のステータス更新（本番書き込みは分類器で停止 → ユーザーが /feedback 画面で RESOLVED に）
 - 受入: 本番URLで golden path + 新画面が動く
 
 ## Stage 5: 報告
-- [ ] 対応表（9項目: 対応内容 / 本番反映 / 社長に確認したいこと）を Vault `04_Work/PJ_川上食品_HACCPMS/` に作成し、Asana「要望対応表と優先順位案」を更新
-- [ ] RESUME.md 更新
+- [x] 対応表（9項目: 対応内容 / 本番反映 / 社長に確認したいこと）を Vault `04_Work/PJ_川上食品_HACCPMS/` に作成し、Asana「要望対応表と優先順位案」を更新
+- [x] RESUME.md 更新
 
 ## スコープ外
 写真アップロード（#5、質問回答後）/ 入庫出荷在庫 / 監査ログ / 帳票PDF / メール通知
+
+## 実施ログ（10/9）
+- 11:30 Stage 1 schema/migration/seed → 21f7bbf
+- 12:00 G-A/G-B/G-C を並列実装（各 ≤200 行、UT 計 40 件追加）
+- 12:40 e2e 7/7 PASS（初回失敗 1 件はテスト側の必須セレクト未入力）
+- 12:50 qa-guardian WARN 3 件（残留塩素ガード未検証 / 点検日・薬品月の UTC ずれ）→ 修正
+- 13:10 design-review FAIL（iPad 幅の折返し・hydration 不一致）→ 修正 → PASS
+- 13:25 コミット 59a4f92 → 本番デプロイ → seed-202610 投入
+- 13:30 本番の製品マスタに社長が追加済みの PRD-005〜007 があり、seed がコード衝突 → 重複 2 件（PRD-008/009）を無効化する `fix-products-202610.ts` を用意（本番書き込みは分類器で停止、ユーザー実行）

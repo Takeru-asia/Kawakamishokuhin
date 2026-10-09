@@ -31,7 +31,7 @@ test.describe('president requests 2026-10', () => {
     await page.goto(`/production/plan?date=${localDate(0)}`);
     await expect(page.getByRole('heading', { name: /製造予定/ }).first()).toBeVisible();
     // Quantity inputs are labelled by product / material name
-    await page.getByLabel('もめん', { exact: true }).fill('120');
+    await page.getByLabel('木綿豆腐', { exact: true }).fill('120');
     await page.getByLabel('一般大豆', { exact: true }).fill('45.5');
     await page.getByRole('button', { name: /保存/ }).click();
     await expect(page.getByText(/保存しました/)).toBeVisible();
