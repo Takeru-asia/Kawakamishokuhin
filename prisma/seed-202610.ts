@@ -10,16 +10,14 @@ if (!connectionString) throw new Error("DATABASE_URL is not set");
 const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
 
 async function main() {
-  // 1. Products named by the president (2026-10-09 feedback). Existing PRD-001..004 are kept.
+  // 1. Products named by the president (2026-10-09 feedback) that are not already in the master.
+  // The master already holds PRD-001..007 (絹ごし豆腐 / 木綿豆腐 / 厚揚げ / 油揚げ / ゆし豆腐 / 焼き豆腐 /
+  // ソフト豆腐), so only the コープ line and 厚揚げ生地 are added, from PRD-010 to avoid code collisions.
   const products = [
-    { code: "PRD-005", name: "もめん", unit: "丁" },
-    { code: "PRD-006", name: "ゆしどうふ", unit: "パック" },
-    { code: "PRD-007", name: "厚揚げ生地", unit: "枚" },
-    { code: "PRD-008", name: "絹ごし", unit: "丁" },
-    { code: "PRD-009", name: "ソフト豆腐", unit: "丁" },
     { code: "PRD-010", name: "コープもめん", unit: "丁" },
     { code: "PRD-011", name: "コープゆしどうふ", unit: "パック" },
     { code: "PRD-012", name: "コープ厚揚げ", unit: "枚" },
+    { code: "PRD-013", name: "厚揚げ生地", unit: "枚" },
   ];
   for (const p of products) {
     const r = await prisma.product.upsert({ where: { code: p.code }, update: {}, create: { ...p, isActive: true } });
