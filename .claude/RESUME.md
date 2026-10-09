@@ -3,7 +3,7 @@
 ## 現在地
 - ブランチ `feature/quality-and-deployment`（origin と同期済み）。PR #1 → main 未マージ: https://github.com/Takeru-asia/Kawakamishokuhin/pull/1
 - 本番: https://kawakami-haccp.vercel.app（Vercel `blended-asia/kawakami-haccp` + Neon `kawakami-haccp-db`）
-- **未デプロイ**: `7d42a2b feat: track user last login time`（`User.lastLoginAt` + migration）。反映は `vercel --prod --yes` をユーザーが実行（分類器が Claude の deploy/PR/push を止めることがある。`gh` は `Takeru-asia` に switch 済みか確認）
+- 10/9 デプロイ済み: `7d42a2b feat: track user last login time`（migration `add_user_last_login_at` 本番適用確認済み）。分類器が Claude の deploy/PR/push/本番DB読取を止めることがある。`gh` は `Takeru-asia` に switch 済みか確認
 
 ## 9/18 の到達点
 - オンプレ（Windows Server + VPN）→ クラウド移行、本番稼働、E2E golden path 2/2 PASS
@@ -14,7 +14,7 @@
 - delivery-ontology: PROP-006 起案済み（提案画面で承認・適用が未実施）
 
 ## 次にやること（Asana と同期済み）
-1. `vercel --prod --yes` で lastLoginAt を本番反映（ユーザー実行）
+1. ~~lastLoginAt 本番反映~~（10/9 完了）
 2. 社長の利用状況確認: `/feedback` の件数 + `users.last_login_at`（9月末で反応なしならリマインド）
 3. iPad Safari 実機確認と崩れ修正（Asana 期限 10/2）
 4. 定例#1 議題準備: フィードバック対応表 + 生産管理系の優先機能の選択肢（10/5）

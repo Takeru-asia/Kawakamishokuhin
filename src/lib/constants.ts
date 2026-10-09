@@ -30,3 +30,9 @@ function getJwtSecretString(): string {
 export const JWT_SECRET = new TextEncoder().encode(getJwtSecretString());
 
 export const COOKIE_NAME = "haccp-token";
+
+// HACCP control thresholds (plain numbers; safe for Edge runtime)
+/** Minimum free residual chlorine in tap water (mg/L, Water Supply Act). */
+export const RESIDUAL_CHLORINE_MIN_MG_L = 0.1;
+/** Body temperature at or above which a clock-in health check is flagged. */
+export const FEVER_THRESHOLD_C = 37.5;
