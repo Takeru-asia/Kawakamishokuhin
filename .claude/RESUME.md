@@ -1,4 +1,4 @@
-# RESUME（最終更新: 2026-10-09）
+# RESUME（最終更新: 2026-10-12）
 
 ## 現在地
 - ブランチ `feature/president-requests-202610`（`feature/quality-and-deployment` から分岐）。PR #1（旧ブランチ → main）は未マージ: https://github.com/Takeru-asia/Kawakamishokuhin/pull/1
@@ -21,7 +21,7 @@
    ```
 2. 本番 feedbacks 2 件のステータスを NEW → RESOLVED（/feedback 画面で ADMIN が変更。分類器が本番書き込みを止めるためユーザー操作）
 3. 社長へ対応報告メール（対応表 + 確認事項 Q1〜Q5）。次回定例 10/20（火）16:00
-4. Meet 録画が届いたら議事録補完（Asana 期限 10/10）
+4. Meet 録画が届いたら議事録補完（Asana 期限 10/10。10/12 時点で BA・ST とも未着。社長側の主催で録画が共有されていない可能性 → 社長に共有を依頼）
 5. iPad Safari 実機確認（Asana 期限 10/17）。デザインレビューは 768px 幅で PASS 済みだが実機未確認
 6. 写真機能（Q1 回答後）/ 監査ログ / レート制限 / `middleware.ts`→`proxy.ts` / Vercel・GitHub 認可を ST に揃える
 
